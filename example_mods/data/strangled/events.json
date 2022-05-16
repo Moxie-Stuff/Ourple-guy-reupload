@@ -1,0 +1,139 @@
+{
+	"song": {
+		"speed": 2.9,
+		"stage": "Pallet town",
+		"player1": "sketch bf",
+		"player2": "steven",
+		"player3": null,
+		"events": [
+			[
+				12307.6923076923,
+				[
+					[
+						"Camera Zoom Speed",
+						"8",
+						"1"
+					]
+				]
+			],
+			[
+				81076.9230769232,
+				[
+					[
+						"Change Scroll Speed",
+						"1.1",
+						"0.0001"
+					]
+				]
+			],
+			[
+				82384.6153846155,
+				[
+					[
+						"Change Scroll Speed",
+						"1",
+						"0.0001"
+					]
+				]
+			],
+			[
+				86000.0000000001,
+				[
+					[
+						"Change Scroll Speed",
+						"1.1",
+						"0.0001"
+					]
+				]
+			],
+			[
+				87288.4615384617,
+				[
+					[
+						"Change Scroll Speed",
+						"1",
+						"0.0001"
+					]
+				]
+			],
+			[
+				91076.9230769232,
+				[
+					[
+						"Camera Zoom Speed",
+						"16",
+						"1"
+					]
+				]
+			],
+			[
+				110769.230769231,
+				[
+					[
+						"Camera Zoom Speed",
+						"8",
+						"1"
+					]
+				]
+			],
+			[
+				179615.384615384,
+				[
+					[
+						"Change Scroll Speed",
+						"1.1",
+						"0.0001"
+					]
+				]
+			],
+			[
+				179692.307692308,
+				[
+					[
+						"Camera Zoom Speed",
+						"4",
+						"1.2"
+					]
+				]
+			],
+			[
+				189538.461538461,
+				[
+					[
+						"Camera Zoom Speed",
+						"8",
+						"1"
+					]
+				]
+			],
+			[
+				189538.461538461,
+				[
+					[
+						"Change Scroll Speed",
+						"1",
+						"0.0001"
+					]
+				]
+			],
+			[
+				199384.615384615,
+				[
+					[
+						"Camera Zoom Speed",
+						"16",
+						"1"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 195,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Strangled"
+	}
+}

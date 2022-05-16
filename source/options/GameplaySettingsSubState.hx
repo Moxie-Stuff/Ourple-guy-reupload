@@ -62,6 +62,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'bool',
 			true);
 		addOption(option);
+		
+		var option:Option = new Option('Follow Characters', //Name
+			'If checked, camera will follow characters notes.', //Description
+			'followChars', //Save data variable name
+			'bool', //Variable type
+			true); //Default value
+		addOption(option);
 
 		var option:Option = new Option('Disable Reset Button',
 			"If checked, pressing Reset won't do anything.",

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bounces.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blackjack dead0000" x="20" y="20" width="419" height="237"/>
+	<SubTexture name="blackjack idle0000" x="459" y="20" width="410" height="293"/>
+	<SubTexture name="dee dead0000" x="889" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0001" x="889" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0002" x="889" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0003" x="1518" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0004" x="1518" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0005" x="1518" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0006" x="2147" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0007" x="2147" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0008" x="2147" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0009" x="2776" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0010" x="2776" y="20" width="609" height="561"/>
+	<SubTexture name="dee dead0011" x="2776" y="20" width="609" height="561"/>
+	<SubTexture name="dee idle0000" x="3405" y="20" width="594" height="806"/>
+	<SubTexture name="dee idle0001" x="3405" y="20" width="594" height="806"/>
+	<SubTexture name="dee idle0002" x="3405" y="20" width="594" height="806"/>
+	<SubTexture name="dee idle0003" x="20" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0004" x="20" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0005" x="20" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0006" x="634" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0007" x="634" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0008" x="634" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0009" x="1248" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0010" x="1248" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0011" x="1248" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0012" x="1248" y="846" width="594" height="806"/>
+	<SubTexture name="dee idle0013" x="1248" y="846" width="594" height="806"/>
+	<SubTexture name="peter dead0000" x="1862" y="846" width="483" height="478"/>
+	<SubTexture name="peter idle0000" x="2365" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0001" x="2365" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0002" x="2365" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0003" x="2761" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0004" x="2761" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0005" x="2761" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0006" x="3157" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0007" x="3157" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0008" x="3157" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0009" x="3553" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0010" x="3553" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0011" x="3553" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0012" x="3553" y="846" width="376" height="767"/>
+	<SubTexture name="peter idle0013" x="3553" y="846" width="376" height="767"/>
+	<SubTexture name="steven dance0000" x="20" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0001" x="20" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0002" x="20" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0003" x="538" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0004" x="538" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0005" x="538" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0006" x="1056" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0007" x="1056" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0008" x="1056" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0009" x="1574" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0010" x="1574" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0011" x="1574" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0012" x="1574" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dance0013" x="1574" y="1672" width="498" height="696"/>
+	<SubTexture name="steven dead0000" x="2092" y="1672" width="818" height="432"/>
+</TextureAtlas>

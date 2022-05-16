@@ -1,0 +1,67 @@
+{
+	"songs": [
+		[
+			"lurking",
+			"bonnie",
+			[
+				46,
+				20,
+				75
+			]
+		],
+		[
+			"change",
+			"henry",
+			[
+				0,
+				0,
+				0
+			]
+		],
+		[
+			"followed",
+			"bonnie",
+			[
+				46,
+				20,
+				75
+			]
+		],
+		[
+			"strangled",
+			"henry",
+			[
+				0,
+				0,
+				0
+			]
+		],
+		[
+			"Midnight",
+			"orange",
+			[
+				144,
+				96,
+				0
+			]
+		]
+	],
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"difficulties": "Hard",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "Your New Week",
+	"weekName": "Custom Week",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": true,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

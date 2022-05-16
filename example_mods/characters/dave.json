@@ -1,0 +1,147 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-87,
+				-237
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "down0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-131,
+				90
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "up0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-39,
+				-110
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "right0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-130,
+				77
+			],
+			"anim": "singUPmiss",
+			"fps": 30,
+			"name": "upF",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-90,
+				-221
+			],
+			"anim": "singDOWNmiss",
+			"fps": 30,
+			"name": "downF",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				128,
+				-9
+			],
+			"anim": "singLEFT",
+			"fps": 30,
+			"name": "left0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-34,
+				-110
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 30,
+			"name": "leftF",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				124,
+				3
+			],
+			"anim": "singLEFTmiss",
+			"fps": 30,
+			"name": "rightF",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				80,
+				-530
+			],
+			"anim": "idle-dead",
+			"fps": 24,
+			"name": "dead",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "idle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "danceRight",
+			"indices": [
+				13,
+				13
+			],
+			"name": "idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/dave",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "duo",
+	"flip_x": false,
+	"healthbar_colors": [
+		234,
+		123,
+		47
+	],
+	"camera_position": [
+		-570,
+		180
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

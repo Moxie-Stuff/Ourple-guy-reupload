@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "fred dance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				22,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "fred left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				-77
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "fred down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-13,
+				13
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "fred up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-17,
+				-5
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "fred right",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/fred",
+	"position": [
+		0,
+		360
+	],
+	"healthicon": "face",
+	"flip_x": true,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}
