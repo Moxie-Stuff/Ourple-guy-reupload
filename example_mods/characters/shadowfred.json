@@ -73,12 +73,12 @@
 		0,
 		0
 	],
-	"healthicon": "face",
+	"healthicon": "shadowfred",
 	"flip_x": false,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		0,
+		0,
+		0
 	],
 	"camera_position": [
 		0,
