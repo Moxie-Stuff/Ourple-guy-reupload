@@ -1,62 +1,65 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 30,
-			"name": "dance",
-			"indices": []
+			"anim": "idle",
+			"indices": [
+				15,
+				15
+			],
+			"name": "dance"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				44,
 				-15
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 30,
-			"name": "left",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				67,
 				107
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 30,
-			"name": "up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				-86
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 30,
-			"name": "down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-9,
 				-11
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 30,
-			"name": "right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
 		}
 	],
-	"no_antialiasing": false,
+	"no_antialiasing": true,
 	"image": "characters/ourple",
 	"position": [
 		0,

@@ -1,13 +1,5 @@
-local speed = 0
-local xx = 881.05;
-local yy = 846.95;
-local xx2 = 1490.55;
-local yy2 = 946;
-local ofs = 20;
-local followchars = true;
-
 function onCreate() 
-	
+	setPropertyFromClass('GameOverSubstate', 'characterName', 'bf_ourple')
 	makeLuaSprite('sky','', 0, -300)
 	makeGraphic('sky', 5000, 5000, '00021E')
 	setScrollFactor('sky', 0, 0);
@@ -32,6 +24,14 @@ function onCreate()
 	addAnimationByPrefix('green', 'dance', 'green guy', 30, false);
 	objectPlayAnimation('green', 'dance', true);
 	addLuaSprite('green', false)
+	
+	makeAnimatedLuaSprite('freddie', 'bg/freddie', 1235.6-1500, 526.35-500);
+	setProperty('freddie.antialiasing', false)
+	scaleObject('freddie', 4, 4)
+	updateHitbox('freddie')
+	addAnimationByPrefix('freddie', 'dance', 'fredie freaker', 30, true);
+	objectPlayAnimation('freddie', 'dance', true);
+	--addLuaSprite('freddie', false)
 	
 	makeAnimatedLuaSprite('rain', 'bg/midnight/rain', 80, 0);
 	setProperty('rain.antialiasing', false)

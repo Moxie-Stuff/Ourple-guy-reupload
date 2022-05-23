@@ -27,6 +27,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
+import flixel.system.FlxAssets.FlxShader;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
@@ -41,8 +42,10 @@ import haxe.Json;
 import lime.utils.Assets;
 import openfl.Lib;
 import openfl.display.BlendMode;
+import openfl.display.Shader;
 import openfl.display.StageQuality;
 import openfl.filters.BitmapFilter;
+import openfl.filters.ShaderFilter;
 import openfl.utils.Assets as OpenFlAssets;
 import editors.ChartingState;
 import editors.CharacterEditorState;
@@ -55,6 +58,8 @@ import Achievements;
 import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
+import Shaders;
+import DynamicShaderHandler;
 #if sys
 import sys.FileSystem;
 #end
@@ -78,6 +83,7 @@ class PlayState extends MusicBeatState
 		['Sick!', 1], //From 90% to 99%
 		['Perfect!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 	];
+	public static var animatedShaders:Map<String, DynamicShaderHandler> = new Map<String, DynamicShaderHandler>();
 	public var modchartTweens:Map<String, FlxTween> = new Map<String, FlxTween>();
 	public var modchartSprites:Map<String, ModchartSprite> = new Map<String, ModchartSprite>();
 	public var modchartTimers:Map<String, FlxTimer> = new Map<String, FlxTimer>();
@@ -111,6 +117,7 @@ class PlayState extends MusicBeatState
 	public var boyfriendGroup:FlxSpriteGroup;
 	public var dadGroup:FlxSpriteGroup;
 	public var gfGroup:FlxSpriteGroup;
+	public var shaderUpdates:Array<Float->Void> = [];
 	public static var curStage:String = '';
 	public static var isPixelStage:Bool = false;
 	public static var SONG:SwagSong = null;
@@ -265,6 +272,7 @@ class PlayState extends MusicBeatState
 	public var luaArray:Array<FunkinLua> = [];
 	private var luaDebugGroup:FlxTypedGroup<DebugLuaText>;
 	public var introSoundsSuffix:String = '';
+	public var luaShaders:Map<String, DynamicShaderHandler> = new Map<String, DynamicShaderHandler>();
 
 	// Debug buttons
 	private var debugKeysChart:Array<FlxKey>;
@@ -422,6 +430,8 @@ class PlayState extends MusicBeatState
 		boyfriendGroup = new FlxSpriteGroup(BF_X, BF_Y);
 		dadGroup = new FlxSpriteGroup(DAD_X, DAD_Y);
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
+		
+		GameOverSubstate.jumpscare = false;
 
 		switch (curStage)
 		{
@@ -694,6 +704,14 @@ class PlayState extends MusicBeatState
 					bg.antialiasing = false;
 					add(bg);
 				}
+			case 'vhs':
+				GameOverSubstate.jumpscare = true;
+				new DynamicShaderHandler('CRT', false);
+				var shaderArray = new Array<BitmapFilter>();
+				shaderArray.push(new ShaderFilter(animatedShaders['CRT'].shader));
+				camGame.setFilters(shaderArray);
+				camHUD.useBgAlphaBlending = true;
+				camHUD.setFilters(shaderArray);
 		}
 
 		if(isPixelStage) {
@@ -830,6 +848,13 @@ class PlayState extends MusicBeatState
 		startCharacterPos(boyfriend);
 		boyfriendGroup.add(boyfriend);
 		startCharacterLua(boyfriend.curCharacter);
+		
+		if (curStage == 'vhs')
+		{
+			boyfriend.visible = false;
+			GameOverSubstate.aftonX = dad.getScreenPosition().x - dad.positionArray[0];
+			GameOverSubstate.aftonY = dad.getScreenPosition().y - dad.positionArray[1];
+		}
 		
 		var camPos:FlxPoint = new FlxPoint(girlfriendCameraOffset[0], girlfriendCameraOffset[1]);
 		if(gf != null)
@@ -2618,7 +2643,21 @@ class PlayState extends MusicBeatState
 			}
 		}
 		#end
-
+		for (shader in animatedShaders)
+		{
+			shader.update(elapsed);
+		}
+		
+		#if LUA_ALLOWED
+		
+		for (key => value in luaShaders)
+		{
+			value.update(elapsed);
+		}
+		#end
+		for (i in shaderUpdates){
+			i(elapsed);
+		}
 		setOnLuas('cameraX', camFollowPos.x);
 		setOnLuas('cameraY', camFollowPos.y);
 		setOnLuas('botPlay', cpuControlled);
@@ -2660,7 +2699,10 @@ class PlayState extends MusicBeatState
 				for (timer in modchartTimers) {
 					timer.active = true;
 				}
-				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x - boyfriend.positionArray[0], boyfriend.getScreenPosition().y - boyfriend.positionArray[1], camFollowPos.x, camFollowPos.y));
+				if (GameOverSubstate.jumpscare)
+					openSubState(new GameOverSubstate(dad.getScreenPosition().x - dad.positionArray[0], dad.getScreenPosition().y - dad.positionArray[1], camFollowPos.x, camFollowPos.y));
+				else
+					openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x - boyfriend.positionArray[0], boyfriend.getScreenPosition().y - boyfriend.positionArray[1], camFollowPos.x, camFollowPos.y));
 
 				// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 				
@@ -3075,7 +3117,7 @@ class PlayState extends MusicBeatState
 	}
 
 	function moveCameraSection(?id:Int = 0, isNote:Bool = false):Void {
-		if(SONG.notes[id] == null) return;
+		if(SONG.notes[id] == null || curStage == 'vhs') return;
 
 		if (gf != null && SONG.notes[id].gfSection)
 		{
@@ -3516,6 +3558,7 @@ class PlayState extends MusicBeatState
 
 
 		comboSpr.velocity.x += FlxG.random.int(1, 10);
+		if (curStage != 'vhs')
 		insert(members.indexOf(strumLineNotes), rating);
 
 		if (!PlayState.isPixelStage)
@@ -3572,6 +3615,7 @@ class PlayState extends MusicBeatState
 			numScore.visible = !ClientPrefs.hideHud;
 
 			//if (combo >= 10 || combo == 0)
+			if (curStage != 'vhs')
 				insert(members.indexOf(strumLineNotes), numScore);
 
 			FlxTween.tween(numScore, {alpha: 0}, 0.2, {

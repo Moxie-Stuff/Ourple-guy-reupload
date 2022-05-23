@@ -1,63 +1,74 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				-171
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "phone lol"
-		},
-		{
-			"offsets": [
-				-20,
-				-173
-			],
-			"indices": [],
 			"fps": 24,
-			"anim": "singLEFT",
-			"loop": false,
-			"name": "LEFT"
+			"name": "phone lol",
+			"indices": []
 		},
 		{
+			"loop": false,
+			"offsets": [
+				64,
+				-171
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [
 				-70,
 				-170
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "right"
+			"fps": 24,
+			"name": "right",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
-				-70,
+				-73,
 				-270
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
 			"loop": false,
-			"name": "down"
+			"offsets": [
+				-74,
+				-99
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
 		},
 		{
 			"offsets": [
-				-77,
-				-89
+				-13,
+				-75
 			],
 			"indices": [],
 			"fps": 24,
-			"anim": "singUP",
+			"anim": "ring",
 			"loop": false,
-			"name": "up"
+			"name": "ringring"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/guy",
+	"image": "characters/phone",
 	"position": [
 		0,
 		0

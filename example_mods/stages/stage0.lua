@@ -49,4 +49,6 @@ function onCreatePost()
 	setPropertyFromGroup('opponentStrums', 3, 'x', defaultPlayerStrumX3 + 0)
 
 	setPropertyFromGroup('opponentStrums', 4, 'x', defaultPlayerStrumX4 + 0)
+	
+	close(true)
 end

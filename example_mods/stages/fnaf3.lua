@@ -14,4 +14,5 @@ function onCreate()
 	--setProperty('backstage.antialiasing', false)
 	addLuaSprite('backstage',false)
 
+	close(true)
 end

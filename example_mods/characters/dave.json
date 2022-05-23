@@ -1,131 +1,131 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				-87,
 				-237
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 30,
-			"name": "down0",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-131,
 				90
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 30,
-			"name": "up0",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "up0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-39,
 				-110
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 30,
-			"name": "right0",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-130,
 				77
 			],
-			"anim": "singUPmiss",
+			"loop": false,
 			"fps": 30,
-			"name": "upF",
-			"indices": []
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "upF"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-90,
 				-221
 			],
-			"anim": "singDOWNmiss",
+			"loop": false,
 			"fps": 30,
-			"name": "downF",
-			"indices": []
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "downF"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				128,
 				-9
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 30,
-			"name": "left0",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-34,
 				-110
 			],
-			"anim": "singRIGHTmiss",
+			"loop": false,
 			"fps": 30,
-			"name": "leftF",
-			"indices": []
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "leftF"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				124,
 				3
 			],
-			"anim": "singLEFTmiss",
+			"loop": false,
 			"fps": 30,
-			"name": "rightF",
-			"indices": []
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "rightF"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				80,
 				-530
 			],
-			"anim": "idle-dead",
+			"loop": false,
 			"fps": 24,
-			"name": "dead",
+			"anim": "idle-dead",
+			"indices": [],
+			"name": "dead"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceLeft",
+			"fps": 30,
+			"name": "idle",
 			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 30,
-			"anim": "danceLeft",
-			"indices": [],
-			"name": "idle"
-		},
-		{
-			"offsets": [
-				0,
-				0
-			],
-			"loop": false,
-			"fps": 30,
 			"anim": "danceRight",
+			"fps": 30,
+			"name": "idle",
 			"indices": [
 				13,
 				13
-			],
-			"name": "idle"
+			]
 		}
 	],
-	"no_antialiasing": false,
+	"no_antialiasing": true,
 	"image": "characters/dave",
 	"position": [
 		0,

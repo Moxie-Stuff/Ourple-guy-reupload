@@ -90,6 +90,9 @@ function onCreate()
 	end
 end
 
+function onCreatePost()
+	duration = getPropertyFromClass('Conductor', 'stepCrochet') * 8 / 1000
+end
 function opponentNoteHit(id, direction, noteType, isSustainNote)
 	if getProperty('health') > 0.2 then
 		if counter > 0 then
@@ -102,11 +105,11 @@ end
 function onTweenCompleted(tag)
 	if _G.alive == true then
 		if tag == 'floatDown' then
-			doTweenY('floatUp', 'blackjack', getProperty('blackjack.y') - 150, 2, 'sineInOut')
+			doTweenY('floatUp', 'blackjack', getProperty('blackjack.y') - 150, duration, 'sineInOut')
 		end
 		
 		if tag == 'floatUp' then
-			doTweenY('floatDown', 'blackjack', getProperty('blackjack.y') + 150, 2, 'sineInOut')
+			doTweenY('floatDown', 'blackjack', getProperty('blackjack.y') + 150, duration, 'sineInOut')
 		end
 	end
 	
