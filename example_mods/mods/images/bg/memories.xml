@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="memories.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="bgs instance 10000" x="20" y="20" width="2880" height="1296"/>
+	<SubTexture name="bgs instance 10001" x="2920" y="20" width="2880" height="1296"/>
+	<SubTexture name="bgs instance 10002" x="20" y="1336" width="2880" height="1296"/>
+	<SubTexture name="bgs instance 10003" x="2920" y="1336" width="2880" height="1296"/>
+	<SubTexture name="bgs instance 10004" x="20" y="2652" width="2880" height="1296"/>
+	<SubTexture name="bgs instance 10005" x="2920" y="2652" width="2880" height="1296"/>
+	<SubTexture name="bgs instance 10006" x="20" y="3968" width="2880" height="1296"/>
+	<SubTexture name="bgs instance 10007" x="2920" y="3968" width="2880" height="1296"/>
+	<SubTexture name="bgs instance 10008" x="20" y="5284" width="2880" height="1296"/>
+</TextureAtlas>

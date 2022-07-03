@@ -1,0 +1,133 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 30,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				185,
+				-6
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "Right0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				185,
+				-6
+			],
+			"anim": "singLEFT",
+			"fps": 30,
+			"name": "Left0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				185,
+				-13
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "Down0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				185,
+				-6
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "Up0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				185,
+				-6
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 30,
+			"name": "RightMiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				185,
+				-6
+			],
+			"anim": "singLEFTmiss",
+			"fps": 30,
+			"name": "LeftMiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				185,
+				-6
+			],
+			"anim": "singDOWNmiss",
+			"fps": 30,
+			"name": "DownMiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				185,
+				-6
+			],
+			"anim": "singUPmiss",
+			"fps": 30,
+			"name": "UpMiss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				90,
+				-270
+			],
+			"anim": "die",
+			"fps": 30,
+			"name": "Dead",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/peterk",
+	"position": [
+		110,
+		130
+	],
+	"healthicon": "duo",
+	"flip_x": false,
+	"healthbar_colors": [
+		234,
+		123,
+		47
+	],
+	"camera_position": [
+		320,
+		140
+	],
+	"sing_duration": 6.7,
+	"scale": 1.5
+}

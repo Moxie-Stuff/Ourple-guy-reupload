@@ -6,20 +6,18 @@ counter = 4
 spitealive = {}
 spiteOgX = {}
 --i love tables
+curType = ''
+default = true
+curFlashbackF = 1
 function onCreate() 
-
+	precacheImage('flashbacks')
+	precacheImage('millerint')
+	setProperty('camZooming', true)
 	setObjectOrder('dadGroup', getObjectOrder('dadGroup') + 2)
 	setObjectOrder('gfGroup', getObjectOrder('gfGroup') + 2)
 	
 	makeLuaSprite('void','flesh', 605, 3881)
 	addLuaSprite('void', false)
-	
-	makeAnimatedLuaSprite('dee', 'bounces', 4300.15, 4791.75);
-	addAnimationByPrefix('dee', 'dance', 'dee idle', 30, false);
-	addAnimationByPrefix('dee', 'die', 'dee dead', 30, true);
-	objectPlayAnimation('dee', 'dance', true);
-	
-	--addLuaSprite('dee', true)
 	
 	makeAnimatedLuaSprite('steven', 'bounces', 4395.4, 4977.65);
 	addAnimationByPrefix('steven', 'dance', 'steven dance', 30, false);
@@ -88,6 +86,46 @@ function onCreate()
 	for i,object in pairs(spitegroup) do
 		doTweenY('floatDownS'..i, object, getProperty(object..'.y') + 150, 2 + i/100, 'sineInOut')
 	end
+	
+	makeLuaSprite('barup','',-34.95,-160.95)
+	makeGraphic('barup',1348.9,281,'000000')
+	addLuaSprite('barup',true)
+    setScrollFactor('barup',0,0)
+    setObjectCamera('barup','hud')
+
+	makeLuaSprite('bardown','',-26,630.45)
+	makeGraphic('bardown',1348.9,281,'000000')
+	addLuaSprite('bardown',true)
+    setScrollFactor('bardown',0,0)
+    setObjectCamera('bardown','hud')
+	
+	makeLuaSprite('black','', -1500, -1500)
+	makeGraphic('black', 5000, 5000, '000000')
+	addLuaSprite('black', true)
+    setScrollFactor('black',0,0)
+    setObjectCamera('black','other')
+	setProperty('camHUD.visible', false)
+	
+	makeAnimatedLuaSprite('flashbacks', 'flashbacks', 0, 0);
+	for i=1, 12 do
+		addAnimationByPrefix('flashbacks', tostring(i), tostring(i)..'0000', 0, false);
+	end
+	objectPlayAnimation('flashbacks', '1', true);
+	setObjectCamera('flashbacks', 'other')
+	scaleObject('flashbacks', 0.8, 0.8)
+	screenCenter('flashbacks')
+	setProperty('flashbacks.alpha', 0)
+	setProperty('flashbacks.antialiasing', false)
+	addLuaSprite('flashbacks', true)
+	
+	makeAnimatedLuaSprite('millerint', 'millerint', 0, 0);
+	addAnimationByPrefix('millerint', 'int', 'millerint', 30, false);
+	setObjectCamera('millerint', 'other')
+	--scaleObject('millerint', 0.8, 0.8)
+	screenCenter('millerint')
+	setProperty('millerint.antialiasing', false)
+	setProperty('millerint.visible', false)
+	addLuaSprite('millerint', true)
 end
 
 function onCreatePost()
@@ -160,6 +198,29 @@ function onEvent(n,v1,v2)
 			end
 		end
 	end
+	
+	if n == 'Set Note Type' then
+		curType = v1
+		if curType == 'bf' or curType == 'BF' then
+			curType = ''
+		end
+		if curType == '' or curType == 'GF Sing' then
+			default = true
+		else
+			default = false
+		end
+	end
+	
+	if n == 'Add Alpha' and v1 == 'flashbacks' then
+		objectPlayAnimation('flashbacks', tostring(curFlashbackF), true)
+		curFlashbackF = curFlashbackF + 1
+	end
+	
+	if n == 'Alter Visibility' and v1 == 'millerint' and v2 == 'false' then
+		removeLuaSprite('millerint')
+		removeLuaSprite('flashbacks')
+		removeLuaSprite('black')
+	end
 
 end
 
@@ -167,9 +228,6 @@ function onBeatHit()
 	-- triggered 4 times per section
 	
 	if curBeat % 2 == 0 then
-		if getProperty('dee.animation.curAnim.name') == 'dance' then
-			objectPlayAnimation('dee', 'dance', true)
-		end
 		
 		if getProperty('steven.animation.curAnim.name') == 'dance' then
 			objectPlayAnimation('steven', 'dance', true)
@@ -263,7 +321,7 @@ function finalHit(index)
 	counter = counter - 1
 end
 
-function onUpdate()
+function onUpdate(elapsed)
 	if getProperty('WEAKENED.alpha') > 0 then
 		setProperty('WEAKENED.alpha', getProperty('WEAKENED.alpha') - 0.02)
 	end
@@ -273,6 +331,20 @@ function onUpdate()
 			getPropertyFromGroup('notes', i, 'noteType') == 'Spite Note' then
 				--debugPrint('removed spite note'..tostring(getPropertyFromGroup('notes', i, 'noteData') + 1))
 				removeFromGroup('notes', i)
+		end
+		
+		if getPropertyFromGroup('notes', i, 'mustPress') then
+			setPropertyFromGroup('notes', i, 'noteType', curType)
+			if curType == 'GF Sing' then
+				setPropertyFromGroup('notes', i, 'gfNote', true)
+			else
+				setPropertyFromGroup('notes', i, 'gfNote', false)
+			end
+			if not default then
+				setPropertyFromGroup('notes', i, 'noAnimation', true)
+			else
+				setPropertyFromGroup('notes', i, 'noAnimation', false)
+			end
 		end
 	end
 	
@@ -284,10 +356,18 @@ function onUpdate()
 		end
 	end
 
-	setProperty('camZooming', true)
 	if mustHitSection == false then
 		setProperty('defaultCamZoom', 0.45)
 	else
 		setProperty('defaultCamZoom', 0.35)
+	end
+	
+	if getProperty('flashbacks.alpha') > 0 then
+		setProperty('flashbacks.alpha', getProperty('flashbacks.alpha') - 0.8 * elapsed)
+		setProperty('flashbacks.scale.x', getProperty('flashbacks.scale.x') + 0.15 * elapsed)
+		setProperty('flashbacks.scale.y', getProperty('flashbacks.scale.y') + 0.15 * elapsed)
+	else
+		setProperty('flashbacks.scale.x', 1.4)
+		setProperty('flashbacks.scale.y', 1.4)
 	end
 end 

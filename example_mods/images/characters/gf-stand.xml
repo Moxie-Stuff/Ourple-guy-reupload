@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gf-stand.png">
+	<!-- Created with Adobe Animate version 22.0.6.202 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="cheer0000" x="5" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0001" x="5" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0002" x="5" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0003" x="521" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0004" x="521" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0005" x="521" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0006" x="521" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0007" x="521" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0008" x="521" y="5" width="511" height="675"/>
+	<SubTexture name="cheer0009" x="521" y="5" width="511" height="675"/>
+	<SubTexture name="danceLeft0000" x="1037" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0001" x="1037" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0002" x="1037" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0003" x="1553" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0004" x="1553" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0005" x="1553" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0006" x="2069" y="5" width="525" height="675"/>
+	<SubTexture name="danceLeft0007" x="2069" y="5" width="525" height="675"/>
+	<SubTexture name="danceLeft0008" x="2069" y="5" width="525" height="675"/>
+	<SubTexture name="danceLeft0009" x="2599" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0010" x="2599" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0011" x="2599" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0012" x="2599" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceLeft0013" x="2599" y="5" width="511" height="675" frameX="-2" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceRight0000" x="3115" y="5" width="511" height="675"/>
+	<SubTexture name="danceRight0001" x="3115" y="5" width="511" height="675"/>
+	<SubTexture name="danceRight0002" x="3115" y="5" width="511" height="675"/>
+	<SubTexture name="danceRight0003" x="5" y="685" width="511" height="675"/>
+	<SubTexture name="danceRight0004" x="5" y="685" width="511" height="675"/>
+	<SubTexture name="danceRight0005" x="5" y="685" width="511" height="675"/>
+	<SubTexture name="danceRight0006" x="521" y="685" width="511" height="675"/>
+	<SubTexture name="danceRight0007" x="521" y="685" width="511" height="675"/>
+	<SubTexture name="danceRight0008" x="521" y="685" width="511" height="675"/>
+	<SubTexture name="danceRight0009" x="2599" y="5" width="511" height="675" frameX="0" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceRight0010" x="2599" y="5" width="511" height="675" frameX="0" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="danceRight0011" x="2599" y="5" width="511" height="675" frameX="0" frameY="0" frameWidth="525" frameHeight="675"/>
+	<SubTexture name="sad0000" x="1037" y="685" width="511" height="675"/>
+	<SubTexture name="sad0001" x="1037" y="685" width="511" height="675"/>
+	<SubTexture name="sad0002" x="1037" y="685" width="511" height="675"/>
+	<SubTexture name="sad0003" x="1553" y="685" width="511" height="675"/>
+	<SubTexture name="sad0004" x="1553" y="685" width="511" height="675"/>
+	<SubTexture name="sad0005" x="1553" y="685" width="511" height="675"/>
+	<SubTexture name="sad0006" x="1553" y="685" width="511" height="675"/>
+	<SubTexture name="sad0007" x="1553" y="685" width="511" height="675"/>
+	<SubTexture name="sad0008" x="1553" y="685" width="511" height="675"/>
+	<SubTexture name="sad0009" x="1553" y="685" width="511" height="675"/>
+</TextureAtlas>

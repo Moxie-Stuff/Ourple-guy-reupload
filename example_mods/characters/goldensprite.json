@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				70,
+				110
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				66,
+				108
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				66,
+				109
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"offsets": [
+				97,
+				156
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "Scream"
+		},
+		{
+			"offsets": [
+				97,
+				156
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "Scream"
+		},
+		{
+			"offsets": [
+				97,
+				156
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "Scream"
+		},
+		{
+			"offsets": [
+				97,
+				156
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "Scream"
+		},
+		{
+			"offsets": [
+				66,
+				109
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				66,
+				110
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Left"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/goldensprite",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "golden",
+	"flip_x": true,
+	"healthbar_colors": [
+		217,
+		189,
+		43
+	],
+	"camera_position": [
+		0,
+		-160
+	],
+	"sing_duration": 5.7,
+	"scale": 0.9
+}

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="phone.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="LEFT0000" x="50" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0001" x="50" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0002" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0003" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0004" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0005" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0006" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0007" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0008" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0009" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0010" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0011" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0012" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="LEFT0013" x="644" y="50" width="544" height="578"/>
+	<SubTexture name="down0000" x="1238" y="50" width="403" height="470"/>
+	<SubTexture name="down0001" x="1238" y="50" width="403" height="470"/>
+	<SubTexture name="down0002" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0003" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0004" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0005" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0006" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0007" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0008" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0009" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0010" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0011" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0012" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="down0013" x="1691" y="50" width="403" height="470"/>
+	<SubTexture name="phone lol0000" x="2144" y="50" width="550" height="579"/>
+	<SubTexture name="phone lol0001" x="2144" y="50" width="550" height="579"/>
+	<SubTexture name="phone lol0002" x="2744" y="50" width="550" height="579"/>
+	<SubTexture name="phone lol0003" x="2744" y="50" width="550" height="579"/>
+	<SubTexture name="phone lol0004" x="3344" y="50" width="550" height="579"/>
+	<SubTexture name="phone lol0005" x="3344" y="50" width="550" height="579"/>
+	<SubTexture name="phone lol0006" x="50" y="679" width="550" height="579"/>
+	<SubTexture name="phone lol0007" x="50" y="679" width="550" height="579"/>
+	<SubTexture name="phone lol0008" x="650" y="679" width="550" height="579"/>
+	<SubTexture name="phone lol0009" x="650" y="679" width="550" height="579"/>
+	<SubTexture name="phone lol0010" x="650" y="679" width="550" height="579"/>
+	<SubTexture name="phone lol0011" x="650" y="679" width="550" height="579"/>
+	<SubTexture name="phone lol0012" x="650" y="679" width="550" height="579"/>
+	<SubTexture name="phone lol0013" x="650" y="679" width="550" height="579"/>
+	<SubTexture name="right0000" x="1250" y="679" width="509" height="578"/>
+	<SubTexture name="right0001" x="1250" y="679" width="509" height="578"/>
+	<SubTexture name="right0002" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0003" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0004" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0005" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0006" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0007" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0008" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0009" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0010" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0011" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0012" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="right0013" x="1809" y="679" width="509" height="578"/>
+	<SubTexture name="ringring0000" x="2368" y="679" width="476" height="675"/>
+	<SubTexture name="ringring0001" x="2894" y="679" width="476" height="675"/>
+	<SubTexture name="ringring0002" x="2894" y="679" width="476" height="675"/>
+	<SubTexture name="ringring0003" x="3420" y="679" width="476" height="675"/>
+	<SubTexture name="ringring0004" x="50" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0005" x="576" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0006" x="1102" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0007" x="1628" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0008" x="2154" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0009" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0010" x="3420" y="679" width="476" height="675"/>
+	<SubTexture name="ringring0011" x="3420" y="679" width="476" height="675"/>
+	<SubTexture name="ringring0012" x="50" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0013" x="50" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0014" x="576" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0015" x="576" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0016" x="1102" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0017" x="1102" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0018" x="1628" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0019" x="1628" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0020" x="2154" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0021" x="2154" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0022" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0023" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0024" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0025" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0026" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0027" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0028" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0029" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0030" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0031" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0032" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0033" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0034" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0035" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0036" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0037" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0038" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0039" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0040" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0041" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0042" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0043" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0044" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0045" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0046" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0047" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0048" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0049" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0050" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0051" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0052" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0053" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0054" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0055" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0056" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0057" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0058" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0059" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0060" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0061" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0062" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="ringring0063" x="2680" y="1404" width="476" height="675"/>
+	<SubTexture name="up0000" x="3206" y="1404" width="403" height="658"/>
+	<SubTexture name="up0001" x="3206" y="1404" width="403" height="658"/>
+	<SubTexture name="up0002" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0003" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0004" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0005" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0006" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0007" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0008" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0009" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0010" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0011" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0012" x="50" y="2129" width="403" height="658"/>
+	<SubTexture name="up0013" x="50" y="2129" width="403" height="658"/>
+</TextureAtlas>

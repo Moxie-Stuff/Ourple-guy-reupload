@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				70,
+				160
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				147,
+				91
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				87,
+				125
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-50,
+				301
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				101,
+				182
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				140
+			],
+			"anim": "garf",
+			"fps": 24,
+			"name": "garf",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/fazbear",
+	"position": [
+		30,
+		260
+	],
+	"healthicon": "freddy",
+	"flip_x": false,
+	"healthbar_colors": [
+		106,
+		57,
+		14
+	],
+	"camera_position": [
+		-20,
+		-50
+	],
+	"sing_duration": 5.7,
+	"scale": 1
+}

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="charlotte.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Cassidy0000" x="0" y="0" width="113" height="116"/>
+	<SubTexture name="Cassidy0001" x="0" y="0" width="113" height="116"/>
+	<SubTexture name="Cassidy0002" x="113" y="0" width="113" height="116"/>
+	<SubTexture name="Cassidy0003" x="113" y="0" width="113" height="116"/>
+</TextureAtlas>

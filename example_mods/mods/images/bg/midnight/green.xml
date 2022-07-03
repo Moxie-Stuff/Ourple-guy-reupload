@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="green.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="green guy0000" x="20" y="20" width="317" height="409"/>
+	<SubTexture name="green guy0001" x="20" y="20" width="317" height="409"/>
+	<SubTexture name="green guy0002" x="20" y="20" width="317" height="409"/>
+	<SubTexture name="green guy0003" x="357" y="20" width="317" height="409"/>
+	<SubTexture name="green guy0004" x="357" y="20" width="317" height="409"/>
+	<SubTexture name="green guy0005" x="357" y="20" width="317" height="409"/>
+	<SubTexture name="green guy0006" x="20" y="449" width="317" height="409"/>
+	<SubTexture name="green guy0007" x="20" y="449" width="317" height="409"/>
+	<SubTexture name="green guy0008" x="20" y="449" width="317" height="409"/>
+	<SubTexture name="green guy0009" x="357" y="449" width="317" height="409"/>
+	<SubTexture name="green guy0010" x="357" y="449" width="317" height="409"/>
+	<SubTexture name="green guy0011" x="357" y="449" width="317" height="409"/>
+</TextureAtlas>

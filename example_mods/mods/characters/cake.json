@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				274,
+				255
+			],
+			"anim": "singLEFT",
+			"fps": 30,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				274,
+				255
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				274,
+				255
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				274,
+				255
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/cake",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "minifreddy",
+	"flip_x": false,
+	"healthbar_colors": [
+		247,
+		118,
+		1
+	],
+	"camera_position": [
+		-270,
+		-170
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

@@ -1,0 +1,59 @@
+{
+	"song": {
+		"speed": 1.7,
+		"stage": "guystage",
+		"player1": "bf",
+		"player2": "guy",
+		"player3": null,
+		"events": [
+			[
+				0,
+				[
+					[
+						"Add Camera Zoom",
+						"0.700",
+						"0.10"
+					]
+				]
+			],
+			[
+				473.684210526316,
+				[
+					[
+						"Add Camera Zoom",
+						"0.700",
+						"0.10"
+					]
+				]
+			],
+			[
+				2526.31578947368,
+				[
+					[
+						"Add Camera Zoom",
+						"0.700",
+						"0.10"
+					]
+				]
+			],
+			[
+				3000,
+				[
+					[
+						"Add Camera Zoom",
+						"0.700",
+						"0.10"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 190,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "guy"
+	}
+}

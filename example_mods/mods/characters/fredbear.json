@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 30,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				406,
+				232
+			],
+			"anim": "singLEFT",
+			"fps": 30,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				405,
+				234
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				405,
+				232
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				404,
+				233
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "right",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/fredbear",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "bread",
+	"flip_x": true,
+	"healthbar_colors": [
+		195,
+		155,
+		6
+	],
+	"camera_position": [
+		210,
+		-200
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

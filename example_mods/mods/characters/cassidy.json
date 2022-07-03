@@ -1,0 +1,133 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				244,
+				150
+			],
+			"anim": "singLEFT",
+			"fps": 30,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				244,
+				150
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				244,
+				150
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				244,
+				150
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				47,
+				56
+			],
+			"anim": "singLEFTmiss",
+			"fps": 30,
+			"name": "missleft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				47,
+				56
+			],
+			"anim": "singDOWNmiss",
+			"fps": 30,
+			"name": "missdown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				47,
+				56
+			],
+			"anim": "singUPmiss",
+			"fps": 30,
+			"name": "missup",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				47,
+				56
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 30,
+			"name": "missright",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceLeft",
+			"fps": 30,
+			"name": "danceLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "danceRight",
+			"fps": 30,
+			"name": "danceRight",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/cassidy",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "cassidy",
+	"flip_x": true,
+	"healthbar_colors": [
+		247,
+		72,
+		72
+	],
+	"camera_position": [
+		20,
+		80
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

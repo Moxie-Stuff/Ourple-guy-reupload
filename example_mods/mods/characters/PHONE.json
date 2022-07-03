@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-171
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "phone lol",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				64,
+				-171
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-70,
+				-170
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-73,
+				-270
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-74,
+				-99
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-13,
+				-75
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "ring",
+			"loop": false,
+			"name": "ringring"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/phone",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "phone",
+	"flip_x": false,
+	"healthbar_colors": [
+		234,
+		40,
+		77
+	],
+	"camera_position": [
+		-50,
+		150
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

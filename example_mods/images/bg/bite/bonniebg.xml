@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bonniebg.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bonnie0000" x="10" y="10" width="518" height="605"/>
+	<SubTexture name="Bonnie0001" x="10" y="10" width="518" height="605"/>
+	<SubTexture name="Bonnie0002" x="538" y="10" width="518" height="605"/>
+	<SubTexture name="Bonnie0003" x="538" y="10" width="518" height="605"/>
+	<SubTexture name="Bonnie0004" x="1066" y="10" width="518" height="605"/>
+	<SubTexture name="Bonnie0005" x="1066" y="10" width="518" height="605"/>
+</TextureAtlas>

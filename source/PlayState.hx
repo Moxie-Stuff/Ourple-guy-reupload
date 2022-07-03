@@ -856,6 +856,11 @@ class PlayState extends MusicBeatState
 			GameOverSubstate.aftonY = dad.getScreenPosition().y - dad.positionArray[1];
 		}
 		
+		GameOverSubstate.characterName = SONG.player1;
+		
+		if (GameOverSubstate.characterName == 'cassidy')
+			GameOverSubstate.characterName = 'cassidy-dead';
+		
 		var camPos:FlxPoint = new FlxPoint(girlfriendCameraOffset[0], girlfriendCameraOffset[1]);
 		if(gf != null)
 		{

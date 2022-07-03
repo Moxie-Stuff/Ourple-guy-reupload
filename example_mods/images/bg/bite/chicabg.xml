@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="chicabg.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Chica0000" x="10" y="10" width="488" height="565"/>
+	<SubTexture name="Chica0001" x="10" y="10" width="488" height="565"/>
+	<SubTexture name="Chica0002" x="508" y="10" width="488" height="565"/>
+	<SubTexture name="Chica0003" x="508" y="10" width="488" height="565"/>
+	<SubTexture name="Chica0004" x="1006" y="10" width="488" height="565"/>
+	<SubTexture name="Chica0005" x="1006" y="10" width="488" height="565"/>
+</TextureAtlas>

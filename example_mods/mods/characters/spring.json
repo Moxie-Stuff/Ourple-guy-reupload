@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				-1
+			],
+			"anim": "singLEFT",
+			"fps": 30,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				1
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				5
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				-1
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "danceLeft"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "danceRight"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/spring",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "springbon",
+	"flip_x": false,
+	"healthbar_colors": [
+		195,
+		155,
+		6
+	],
+	"camera_position": [
+		0,
+		70
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-40,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "NGTLeft"
+		},
+		{
+			"offsets": [
+				-50,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "NGTDown"
+		},
+		{
+			"offsets": [
+				-52,
+				-250
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "NGTUp"
+		},
+		{
+			"offsets": [
+				-60,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "NGTRight"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-141,
+				-299
+			],
+			"anim": "pissed",
+			"fps": 30,
+			"name": "NGTPissed",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-144,
+				-300
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "idle-alt",
+			"loop": false,
+			"name": "NGTIdle-alt"
+		},
+		{
+			"offsets": [
+				-140,
+				-300
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "idle",
+			"loop": false,
+			"name": "NGTIdle0"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/ngt",
+	"position": [
+		0,
+		70
+	],
+	"healthicon": "ngeraldt",
+	"flip_x": false,
+	"healthbar_colors": [
+		251,
+		242,
+		54
+	],
+	"camera_position": [
+		80,
+		60
+	],
+	"sing_duration": 6.1,
+	"scale": 2.1
+}

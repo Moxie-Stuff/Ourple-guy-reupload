@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="kiddance.png">
+	<!-- Created with Adobe Animate version 22.0.6.202 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="kid0000" x="5" y="5" width="112" height="107"/>
+	<SubTexture name="kid0001" x="5" y="5" width="112" height="107"/>
+	<SubTexture name="kid0002" x="5" y="5" width="112" height="107"/>
+	<SubTexture name="kid0003" x="122" y="5" width="112" height="107"/>
+	<SubTexture name="kid0004" x="122" y="5" width="112" height="107"/>
+	<SubTexture name="kid0005" x="122" y="5" width="112" height="107"/>
+	<SubTexture name="kid0006" x="239" y="5" width="112" height="107"/>
+	<SubTexture name="kid0007" x="239" y="5" width="112" height="107"/>
+	<SubTexture name="kid0008" x="239" y="5" width="112" height="107"/>
+	<SubTexture name="kid0009" x="239" y="5" width="112" height="107"/>
+	<SubTexture name="kid0010" x="239" y="5" width="112" height="107"/>
+	<SubTexture name="kid0011" x="239" y="5" width="112" height="107"/>
+	<SubTexture name="kid0012" x="239" y="5" width="112" height="107"/>
+	<SubTexture name="kid0013" x="356" y="5" width="112" height="107"/>
+	<SubTexture name="kid0014" x="356" y="5" width="112" height="107"/>
+	<SubTexture name="kid0015" x="356" y="5" width="112" height="107"/>
+	<SubTexture name="kid0016" x="5" y="117" width="112" height="107"/>
+	<SubTexture name="kid0017" x="5" y="117" width="112" height="107"/>
+	<SubTexture name="kid0018" x="5" y="117" width="112" height="107"/>
+	<SubTexture name="kid0019" x="122" y="117" width="112" height="107"/>
+	<SubTexture name="kid0020" x="122" y="117" width="112" height="107"/>
+	<SubTexture name="kid0021" x="122" y="117" width="112" height="107"/>
+	<SubTexture name="kid0022" x="122" y="117" width="112" height="107"/>
+	<SubTexture name="kid0023" x="122" y="117" width="112" height="107"/>
+	<SubTexture name="kid0024" x="122" y="117" width="112" height="107"/>
+	<SubTexture name="kid0025" x="122" y="117" width="112" height="107"/>
+</TextureAtlas>

@@ -1,0 +1,31 @@
+{
+	"storyName": "",
+	"difficulties": "Hard",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"guy",
+			"guy",
+			[
+				226,
+				113,
+				253
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": ""
+}

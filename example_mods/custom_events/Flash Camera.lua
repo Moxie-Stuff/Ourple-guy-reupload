@@ -12,6 +12,7 @@ function onEvent(n,v1,v2)
 	      setProperty('flash.alpha',0)
 		setProperty('flash.alpha',1)
 		doTweenAlpha('flTw','flash',0,v1,'linear')
+		setObjectCamera('flash', 'other')
 	end
 
 
