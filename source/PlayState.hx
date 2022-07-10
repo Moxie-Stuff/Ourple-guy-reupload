@@ -290,7 +290,7 @@ class PlayState extends MusicBeatState
 	{
 		Paths.clearStoredMemory();
 
-		if (songname_l == 'criminal' || songname_l == 'bite' || songname_l == 'beatbox' || songname_l == 'blubber' || songname_l == 'trapped') gotOurpleNotes = false;
+		if (SONG.song.toLowerCase() == 'criminal' || SONG.song.toLowerCase() == 'bite' || SONG.song.toLowerCase() == 'beatbox' || SONG.song.toLowerCase() == 'blubber' || SONG.song.toLowerCase() == 'trapped') gotOurpleNotes = false;
 		else gotOurpleNotes = true;
 
 		// for lua
@@ -1129,7 +1129,7 @@ class PlayState extends MusicBeatState
 		songSign.scrollFactor.set();
 		songSign.visible = !ClientPrefs.hideHud;
 		songSign.antialiasing = false;
-		if (songname_l != 'miller' && songname_l != 'criminal') add(songSign);
+		if (SONG.song.toLowerCase() != 'miller' && SONG.song.toLowerCase() != 'criminal') add(songSign);
 
 		songSignTxt = new FlxText(-390, 190, 600, SONG.song + '\n' + songComposer);
 		songSignTxt.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -4464,12 +4464,12 @@ class PlayState extends MusicBeatState
 			dad.dance();
 		}
 
-		if (songname_l != 'miller' ? curBeat == 1 : curBeat == 248) {
+		if (SONG.song.toLowerCase() != 'miller' ? curBeat == 1 : curBeat == 248) {
 			FlxTween.tween(songSign, {x: 40}, 1, {ease: FlxEase.quadOut});
 			FlxTween.tween(songSignTxt, {x: 50}, 1, {ease: FlxEase.quadOut});
 		}
 
-		if (songname_l != 'miller' ? curBeat == 8 : curBeat == 256) { 
+		if (SONG.song.toLowerCase() != 'miller' ? curBeat == 8 : curBeat == 256) { 
 			FlxTween.tween(songSign, {x: -400}, 1.5, {ease: FlxEase.quadIn});
 			FlxTween.tween(songSignTxt, {x: -390}, 1.5, {ease: FlxEase.quadIn});
 		}
