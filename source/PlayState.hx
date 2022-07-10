@@ -334,7 +334,7 @@ class PlayState extends MusicBeatState
 				songComposer = 'Xhitest';
 				FreeplaySaves.restlessLock = 'unlocked';
 			case 'beatbox':
-				songComposer = 'METR0GARD3N';
+				songComposer = 'Kiwiquest';
 				FreeplaySaves.beatboxLock = 'unlocked';
 			case 'showtime':
 				songComposer = 'Polyfield';
