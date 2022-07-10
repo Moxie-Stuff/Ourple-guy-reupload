@@ -81,7 +81,7 @@ class FreeplayState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
-		for (i in 0...WeekData.weeksList.length) {
+		/*for (i in 0...WeekData.weeksList.length) {
 			if(weekIsLocked(WeekData.weeksList[i])) continue;
 
 			var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
@@ -104,7 +104,28 @@ class FreeplayState extends MusicBeatState
 				}
 				addSong(song[0], i, song[1], FlxColor.fromRGB(colors[0], colors[1], colors[2]));
 			}
-		}
+		}*/
+
+		addSong('guy', 0, 'guy', 0xFF000000, 'unlocked');
+		addSong('midnight', 0, 'orange', 0xFF000000, 'unlocked');
+		addSong('terminated', 0, 'henryt', 0xFF000000, 'unlocked');
+		addSong('lurking', 0, 'guy', 0xFF000000, 'locked');
+		addSong('lore', 0, 'guy', 0xFF000000, 'locked');
+		addSong('blubber', 0, 'guy', 0xFF000000, 'locked');
+		//addSong('golden', 0, 'guy', 0xFF000000, 'locked');
+		addSong('performance', 0, 'guy', 0xFF000000, 'locked');
+		addSong('bite', 0, 'guy', 0xFF000000, 'locked');
+		addSong('trapped', 0, 'guy', 0xFF000000, 'locked');
+		addSong('go fish', 0, 'guy', 0xFF000000, 'locked');
+		//addSong('watchful', 0, 'guy', 0xFF000000, 'locked');
+		addSong('restless', 0, 'guy', 0xFF000000, 'locked');
+		//addSong('beatbox', 0, 'guy', 0xFF000000, 'locked');
+		addSong('showtime', 0, 'guy', 0xFF000000, 'locked');
+		addSong('man', 0, 'guy', 0xFF000000, 'locked');
+		addSong('followed', 0, 'guy', 0xFF000000, 'locked');
+		//addSong('fazfuck news', 0, 'guy', 0xFF000000, 'locked');
+		addSong('criminal', 0, 'guy', 0xFF000000, 'locked');
+
 		WeekData.loadTheFirstEnabledMod();
 
 		camGame = new FlxCamera();
@@ -113,6 +134,8 @@ class FreeplayState extends MusicBeatState
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camBG);
 		FlxCamera.defaultCameras = [camBG];
+
+
 
 		/*		//KIND OF BROKEN NOW AND ALSO PRETTY USELESS//
 
@@ -146,7 +169,8 @@ class FreeplayState extends MusicBeatState
 			//grpSongs.add(songText);
 
 			var arcadeMachine:ArcadeMachine = new ArcadeMachine((100 * i) + 30, 200);
-			arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
+			if (songs[i].lockstatus == 'unlocked') arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
+			else arcadeMachine.loadGraphic(Paths.image('machines/blank', 'preload'));
 			arcadeMachine.coolArcadeTargetX = i;
 			arcadeGrp.add(arcadeMachine);
 			arcadeMachine.scale.set(1.5, 1.5);
@@ -287,9 +311,9 @@ class FreeplayState extends MusicBeatState
 		super.closeSubState();
 	}
 
-	public function addSong(songName:String, weekNum:Int, songCharacter:String, color:Int)
+	public function addSong(songName:String, weekNum:Int, songCharacter:String, color:Int, lockstatus:String)
 	{
-		songs.push(new SongMetadata(songName, weekNum, songCharacter, color));
+		songs.push(new SongMetadata(songName, weekNum, songCharacter, color, lockstatus));
 	}
 
 	function weekIsLocked(name:String):Bool {
@@ -638,14 +662,16 @@ class SongMetadata
 	public var week:Int = 0;
 	public var songCharacter:String = "";
 	public var color:Int = -7179779;
+	public var lockstatus:String = 'locked';
 	public var folder:String = "";
 
-	public function new(song:String, week:Int, songCharacter:String, color:Int)
+	public function new(song:String, week:Int, songCharacter:String, color:Int, lockstatus:String)
 	{
 		this.songName = song;
 		this.week = week;
 		this.songCharacter = songCharacter;
 		this.color = color;
+		this.lockstatus = lockstatus;
 		this.folder = Paths.currentModDirectory;
 		if(this.folder == null) this.folder = '';
 	}
