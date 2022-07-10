@@ -23,7 +23,7 @@ function onBeatHit()
 end
 
 function goodNoteHit(id, direction, noteType, isSustainNote)
-	if noteType ~= 'GF Sing' then
+	if not getPropertyFromGroup('notes', id, 'gfNote') then
 	cancelTween('raise')
 	setProperty('boyfriend.y', defaultY)
 	setProperty('boyfriend.flipX', true)
@@ -31,7 +31,7 @@ function goodNoteHit(id, direction, noteType, isSustainNote)
 end
 
 function noteMiss(id, direction, noteType, isSustainNote)
-	if noteType ~= 'GF Sing' then
+	if not getPropertyFromGroup('notes', id, 'gfNote') then
 	cancelTween('raise')
 	setProperty('boyfriend.y', defaultY)
 	setProperty('boyfriend.flipX', true)

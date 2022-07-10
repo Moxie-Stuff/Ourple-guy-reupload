@@ -56,7 +56,7 @@ function onUpdate()
 			end
 		end
 		
-		if getPropertyFromGroup('playerStrums', 0, 'x') ~= defaultPlayerStrumX0 - 630 then
+		if getPropertyFromGroup('playerStrums', 0, 'x') ~= defaultPlayerStrumX0 - 630 and not getPropertyFromClass('ClientPrefs', 'middleScroll') then
 			setPropertyFromGroup('playerStrums', 0, 'x', defaultPlayerStrumX0 - 630)
 			setPropertyFromGroup('playerStrums', 1, 'x', defaultPlayerStrumX1 - 600)
 			setPropertyFromGroup('playerStrums', 2, 'x', defaultPlayerStrumX2 - 30)

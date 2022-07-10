@@ -1,5 +1,5 @@
 function onCreate()  
-
+	setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'crushed')
 	makeLuaSprite('barup','',-34.95,-90.95)
 	makeGraphic('barup',1348.9,211,'000000')
 	addLuaSprite('barup',true)
@@ -22,6 +22,7 @@ function onCreate()
 	updateHitbox('room2')
 	setProperty('room2.antialiasing', false)
 	addLuaSprite('room2',true)
+	close(true)
 end 
 
 
