@@ -1,66 +1,132 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 30,
 			"anim": "idle",
-			"indices": [],
-			"name": "idle"
+			"fps": 30,
+			"name": "idle",
+			"indices": []
 		},
 		{
-			"offsets": [
-				80,
-				-90
-			],
 			"loop": false,
-			"fps": 30,
+			"offsets": [
+				320,
+				290
+			],
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "left"
+			"fps": 30,
+			"name": "left",
+			"indices": []
 		},
 		{
-			"offsets": [
-				0,
-				-270
-			],
 			"loop": false,
-			"fps": 30,
+			"offsets": [
+				320,
+				290
+			],
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "down"
+			"fps": 30,
+			"name": "down",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-31,
-				54
-			],
 			"loop": false,
-			"fps": 30,
+			"offsets": [
+				320,
+				290
+			],
 			"anim": "singUP",
-			"indices": [],
-			"name": "up"
+			"fps": 30,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				320,
+				290
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "right",
+			"indices": []
 		},
 		{
 			"offsets": [
-				0,
-				-70
+				-40,
+				-220
+			],
+			"loop": false,
+			"fps": 33,
+			"anim": "cancer",
+			"indices": [],
+			"name": "cancer"
+		},
+		{
+			"offsets": [
+				-40,
+				-220
+			],
+			"loop": false,
+			"fps": 38,
+			"anim": "false",
+			"indices": [],
+			"name": "falsesavior"
+		},
+		{
+			"offsets": [
+				-40,
+				-220
+			],
+			"loop": false,
+			"fps": 26,
+			"anim": "orphan",
+			"indices": [],
+			"name": "orphan"
+		},
+		{
+			"offsets": [
+				-40,
+				-220
 			],
 			"loop": false,
 			"fps": 30,
-			"anim": "singRIGHT",
+			"anim": "meaningless",
 			"indices": [],
-			"name": "right"
+			"name": "meaningless"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-40,
+				-220
+			],
+			"anim": "coward",
+			"fps": 24,
+			"name": "coward",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-40,
+				-220
+			],
+			"indices": [],
+			"fps": 29,
+			"anim": "asbad",
+			"loop": false,
+			"name": "asbadasme"
 		}
 	],
 	"no_antialiasing": true,
 	"image": "characters/henry",
 	"position": [
-		0,
-		0
+		60,
+		30
 	],
 	"healthicon": "henry",
 	"flip_x": false,
@@ -71,8 +137,8 @@
 	],
 	"camera_position": [
 		0,
-		70
+		0
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 1.8
 }

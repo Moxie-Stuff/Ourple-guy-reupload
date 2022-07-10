@@ -7,7 +7,7 @@ local ofs = 20;
 local followchars = true;
 
 function onCreate() 
-
+	setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'crushed')
 	makeLuaSprite('backstage','bg/stage0/showtime', 0, 0)
 	scaleObject('backstage', 2.8, 2.8)
 	updateHitbox('backstage')
@@ -27,6 +27,21 @@ function onCreate()
 	addLuaSprite('child2',false)
 
 end
+
+function onGameOverStart()
+	-- You died! Called every single frame your health is lower (or equal to) zero
+	--return Function_Stop
+	setScrollFactor(getPropertyFromClass('GameOverSubstate', 'boyfriend'), 0, 0)
+	setPropertyFromClass('flixel.FlxG', 'camera.x', 0)
+	setPropertyFromClass('flixel.FlxG', 'camera.y', 0)
+	setProperty('boyfriend.x', 180)
+	setProperty('boyfriend.y', 180)
+	setProperty('boyfriend.alpha', 0)
+	doTweenAlpha('fadeIn', 'boyfriend', 1, 3, 'sineIn')
+	--objectPlayAnimation('boyfriend', 'die', true)
+	return Function_Continue;
+end
+
 
 function onCreatePost()
 	setProperty('gf.visible', false)

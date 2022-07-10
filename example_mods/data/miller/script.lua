@@ -4,22 +4,32 @@ function onCreate()
 	makeAnimationList();
 	makeOffsets();
 	
-	makeAnimatedLuaSprite('dee', 'characters/dee_Assets', 4300.15, 4791.75);
-	addAnimationByPrefix('dee', 'idle', 'dee idle', 30, false);
-	addAnimationByPrefix('dee', 'singLEFT', 'left', 30, false);
-	addAnimationByPrefix('dee', 'singDOWN', 'down', 30, false);
-	addAnimationByPrefix('dee', 'singUP', 'up', 30, false);
-	addAnimationByPrefix('dee', 'singRIGHT', 'right', 30, false);
-	addAnimationByPrefix('dee', 'die', 'dee dead', 30, true);
-	setObjectOrder('dee', getObjectOrder('steven') - 1)
+	makeAnimatedLuaSprite('dee', 'characters/dee_Assets', 4400.15, 4901.75);
+	addAnimationByPrefix('dee', 'idle', 'idle', 24, false);
+	addAnimationByPrefix('dee', 'singLEFT', 'left0', 30, false);
+	addAnimationByPrefix('dee', 'singDOWN', 'down0', 30, false);
+	addAnimationByPrefix('dee', 'singUP', 'up0', 30, false);
+	addAnimationByPrefix('dee', 'singRIGHT', 'right0', 30, false);
 	
+	addAnimationByPrefix('dee', 'singLEFTmiss', 'leftmiss', 30, false);
+	addAnimationByPrefix('dee', 'singDOWNmiss', 'downmiss', 30, false);
+	addAnimationByPrefix('dee', 'singUPmiss', 'upmiss', 30, false);
+	addAnimationByPrefix('dee', 'singRIGHTmiss', 'rightmiss', 30, false);
+	
+	addAnimationByPrefix('dee', 'die', 'dead', 30, true);
+	scaleObject('dee', 1.8, 1.8)
+	updateHitbox('dee')
+	setProperty('dee.antialiasing', false)
 	addLuaSprite('dee', true);
+	setProperty('dee.visible', false)
 
 	playAnimation('dee', 'idle', true);
+	addLuaScript('steven')
+	setObjectOrder('steven', getObjectOrder('dee')+1)
 end
 
 animationsList = {}
-holdTimers = {dee = 10.0};
+holdTimers = {dee = 15.0};
 singAnimations = {'singLEFT', 'singDOWN', 'singUP', 'singRIGHT'};
 function makeAnimationList()
 	animationsList['idle'] = 'idle';
@@ -27,17 +37,25 @@ function makeAnimationList()
 	animationsList['singDOWN'] = 'singDOWN';
 	animationsList['singUP'] = 'singUP';
 	animationsList['singRIGHT'] = 'singRIGHT';
+	animationsList['singLEFTmiss'] = 'singLEFTmiss';
+	animationsList['singDOWNmiss'] = 'singDOWNmiss';
+	animationsList['singUPmiss'] = 'singUPmiss';
+	animationsList['singRIGHTmiss'] = 'singRIGHTmiss';
 	animationsList['die'] = 'die';
 end
 
 offsetsdee = {};
 function makeOffsets()
 	offsetsdee['idle'] = {x = 0, y = 0}; --idle
-	offsetsdee['singLEFT'] = {x = 170, y = -25}; --left
-	offsetsdee['singDOWN'] = {x = -150, y = -310}; --down
-	offsetsdee['singUP'] = {x = -190, y = 40}; --up
-	offsetsdee['singRIGHT'] = {x = -237, y = 0}; --right
-	offsetsdee['die'] = {x = -61, y = -271}; --die
+	offsetsdee['singLEFT'] = {x = -15, y = -6}; --left
+	offsetsdee['singDOWN'] = {x = -15, y = -6}; --down
+	offsetsdee['singUP'] = {x = -15, y = -6}; --up
+	offsetsdee['singRIGHT'] = {x = -15, y = -6}; --right
+	offsetsdee['singLEFTmiss'] = {x = 5, y = -32}; --left
+	offsetsdee['singDOWNmiss'] = {x = -223, y = -269}; --down
+	offsetsdee['singUPmiss'] = {x = -215, y = 6}; --up
+	offsetsdee['singRIGHTmiss'] = {x = -285, y = -48}; --right
+	offsetsdee['die'] = {x = -55, y = -258}; --die
 end
 
 function goodNoteHit(id, direction, noteType, isSustainNote)
@@ -50,25 +68,17 @@ function goodNoteHit(id, direction, noteType, isSustainNote)
 				
 		playAnimation(characterToPlay, animToPlay, true);
 	end
-	
-	if noteType == 'Spite Note' then
-		local charPick = math.random(1,3)
-		local charName = ''
-		
-		if charPick == 1 then 
-			charName = 'dee'
-		elseif charPick == 2 then
-			charName = 'bf'
-		elseif charPick == 3 then
-			charName = 'gf'
-		end
-		
-		
-		if charPick == 1 then 
-			playAnimation(charName, 'singLEFT', true);
-		elseif charPick == 2 or charPick == 3 then
-			triggerEvent('Play Animation', 'singLEFT', charName)
-		end
+end
+
+function noteMiss(id, direction, noteType, isSustainNote)
+	if noteType == 'Special Sing' then
+		if not isSustainNote then
+			animToPlay = singAnimations[direction+1];
+		end	
+		characterToPlay = 'dee'
+		animToPlay = animToPlay..'miss'
+				
+		playAnimation(characterToPlay, animToPlay, true);
 	end
 end
 
@@ -100,23 +110,19 @@ function beatHitDance(counter)
 end
 
 function playAnimation(character, animId, forced)
-	-- 0 = idle
-	-- 1 = singLEFT
-	-- 2 = singDOWN
-	-- 3 = singUP
-	-- 4 = singRIGHT
-	animName = animationsList[animId];
-	--debugPrint(animName);
-	objectPlayAnimation(character, animName, forced); -- this part is easily broke if you use objectPlayAnim (I have no idea why its like this)
+	objectPlayAnimation(character, animId, forced, 0); -- this part is easily broke if you use objectPlayAnim (I have no idea why its like this)
 	offsetTable = offsetsdee
-	setProperty(character..'.offset.x', offsetTable[animId].x);
-	setProperty(character..'.offset.y', offsetTable[animId].y);
+	setProperty(character..'.offset.x', offsetTable[animId].x)
+	setProperty(character..'.offset.y', offsetTable[animId].y)
 end
 
 function onEvent(n,v1,v2)
 
 	if n == 'Object Play Animation' and v1 == 'dee' then
 		playAnimation(v1,v2,true)
+		if string.sub(getProperty('steven.animation.curAnim.name'),1,4) == 'sing' then
+			holdTimers.dee = 0
+		end
 	end
 
 end

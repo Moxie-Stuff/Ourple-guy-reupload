@@ -1,114 +1,114 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"loop": false,
+			"fps": 30,
 			"anim": "idle",
-			"fps": 30,
-			"name": "Idle",
-			"indices": []
+			"indices": [],
+			"name": "Idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				185,
 				-6
 			],
+			"loop": false,
+			"fps": 30,
 			"anim": "singRIGHT",
-			"fps": 30,
-			"name": "Right0",
-			"indices": []
+			"indices": [],
+			"name": "Right0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				185,
 				-6
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 30,
-			"name": "Left0",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				185,
 				-13
 			],
+			"loop": false,
+			"fps": 30,
 			"anim": "singDOWN",
-			"fps": 30,
-			"name": "Down0",
-			"indices": []
+			"indices": [],
+			"name": "Down0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				185,
 				-6
 			],
+			"loop": false,
+			"fps": 30,
 			"anim": "singUP",
-			"fps": 30,
-			"name": "Up0",
-			"indices": []
+			"indices": [],
+			"name": "Up0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				185,
 				-6
 			],
+			"loop": false,
+			"fps": 30,
 			"anim": "singRIGHTmiss",
-			"fps": 30,
-			"name": "RightMiss",
-			"indices": []
+			"indices": [],
+			"name": "RightMiss"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				185,
 				-6
 			],
+			"loop": false,
+			"fps": 30,
 			"anim": "singLEFTmiss",
-			"fps": 30,
-			"name": "LeftMiss",
-			"indices": []
+			"indices": [],
+			"name": "LeftMiss"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				185,
 				-6
 			],
+			"loop": false,
+			"fps": 30,
 			"anim": "singDOWNmiss",
-			"fps": 30,
-			"name": "DownMiss",
-			"indices": []
+			"indices": [],
+			"name": "DownMiss"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				185,
 				-6
 			],
-			"anim": "singUPmiss",
+			"loop": false,
 			"fps": 30,
-			"name": "UpMiss",
-			"indices": []
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "UpMiss"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				90,
 				-270
 			],
-			"anim": "die",
+			"loop": false,
 			"fps": 30,
-			"name": "Dead",
-			"indices": []
+			"anim": "die",
+			"indices": [],
+			"name": "Dead"
 		}
 	],
 	"no_antialiasing": true,
@@ -129,5 +129,5 @@
 		140
 	],
 	"sing_duration": 6.7,
-	"scale": 1.5
+	"scale": 1.8
 }

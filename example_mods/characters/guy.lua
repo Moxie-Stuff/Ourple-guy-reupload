@@ -19,9 +19,11 @@ function onBeatHit()
 end
 
 function opponentNoteHit(id, direction, noteType, isSustainNote)
+	if noteType == '' then
 	cancelTween('raise')
 	setProperty('dad.y', defaultY)
 	setProperty('dad.flipX', false)
+	end
 end
 
 function onStepHit() 

@@ -9,7 +9,13 @@ spiteOgX = {}
 curType = ''
 default = true
 curFlashbackF = 1
+bannedAnims = {'singUP', 'singDOWN', 'singLEFT', 'singRIGHT', 'die', 'idle-dead'}
+listHealing = {'dee','peter','steven','gf','blackjack'}
+listAttacking = {'dee','peter','steven','gf','boyfriend'}
+bjDefY = 0
 function onCreate() 
+	precacheImage('spite/hit')
+	precacheImage('heal')
 	precacheImage('flashbacks')
 	precacheImage('millerint')
 	setProperty('camZooming', true)
@@ -19,7 +25,7 @@ function onCreate()
 	makeLuaSprite('void','flesh', 605, 3881)
 	addLuaSprite('void', false)
 	
-	makeAnimatedLuaSprite('steven', 'bounces', 4395.4, 4977.65);
+	--[[makeAnimatedLuaSprite('steven', 'bounces', 4395.4, 4977.65);
 	addAnimationByPrefix('steven', 'dance', 'steven dance', 30, false);
 	addAnimationByPrefix('steven', 'die', 'steven dead', 30, true);
 	objectPlayAnimation('steven', 'dance', true);
@@ -31,9 +37,10 @@ function onCreate()
 	addAnimationByPrefix('peter', 'die', 'peter dead', 30, true);
 	objectPlayAnimation('peter', 'dance', true);
 	
-	addLuaSprite('peter', true)
+	addLuaSprite('peter', true)--]]
 	
 	makeAnimatedLuaSprite('blackjack', 'bounces', 4842.55, 4842.55);
+	bjDefY = getProperty('blackjack.y')
 	addAnimationByPrefix('blackjack', 'dance', 'blackjack idle', 30, false);
 	addAnimationByPrefix('blackjack', 'die', 'blackjack dead', 30, false);
 	objectPlayAnimation('blackjack', 'dance', true);
@@ -103,8 +110,8 @@ function onCreate()
 	makeGraphic('black', 5000, 5000, '000000')
 	addLuaSprite('black', true)
     setScrollFactor('black',0,0)
-    setObjectCamera('black','other')
-	setProperty('camHUD.visible', false)
+    --setObjectCamera('black','other')
+	setProperty('camHUD.alpha', 0)
 	
 	makeAnimatedLuaSprite('flashbacks', 'flashbacks', 0, 0);
 	for i=1, 12 do
@@ -120,8 +127,7 @@ function onCreate()
 	
 	makeAnimatedLuaSprite('millerint', 'millerint', 0, 0);
 	addAnimationByPrefix('millerint', 'int', 'millerint', 30, false);
-	setObjectCamera('millerint', 'other')
-	--scaleObject('millerint', 0.8, 0.8)
+	setObjectCamera('millerint', 'hud')
 	screenCenter('millerint')
 	setProperty('millerint.antialiasing', false)
 	setProperty('millerint.visible', false)
@@ -130,6 +136,8 @@ end
 
 function onCreatePost()
 	duration = getPropertyFromClass('Conductor', 'stepCrochet') * 8 / 1000
+	setProperty('henrylip.x', getProperty('dad.x')-400)
+	setProperty('henrylip.y', getProperty('dad.y')-130)
 end
 function opponentNoteHit(id, direction, noteType, isSustainNote)
 	if getProperty('health') > 0.2 then
@@ -150,17 +158,6 @@ function onTweenCompleted(tag)
 			doTweenY('floatDown', 'blackjack', getProperty('blackjack.y') + 150, duration, 'sineInOut')
 		end
 	end
-	
-	if tag == 'Bounce' then 
-		doTweenY('Fall', 'WEAKENED', getProperty('WEAKENED.y') + 200, 0.6, 'sineIn')
-		--doTweenX('BounceX', 'WEAKENED', getProperty('WEAKENED.x') + 30, 0.3, 'sineOut')
-	end
-	
-	if tag == 'BounceX' then 
-		--doTweenY('Fall', 'WEAKENED', getProperty('WEAKENED.y') + 150, 0.6, 'cubeIn')
-		doTweenX('FallX', 'WEAKENED', getProperty('WEAKENED.x') + 70, 0.6, 'sineIn')
-	end
-		
 	for i,object in pairs(spitegroup) do
 	
 		if stunholder[i] == false and spitehp[i] > 0 and object ~= nil then
@@ -187,14 +184,58 @@ function onTweenCompleted(tag)
 			end
 		end
 	end
+	
+	for i,object in pairs(listHealing) do
+		if tag == 'fadeHeal'..i then
+			removeLuaSprite('healFX'..i)
+		end
+	end
 end
 
 function onEvent(n,v1,v2)
 
+	if n == 'All Sing' then
+		triggerEvent('Play Animation', 'singUP', 'gf')
+		triggerEvent('Object Play Animation', 'dee', 'singUP')
+		triggerEvent('Object Play Animation', 'peter', 'singUP')
+		triggerEvent('Object Play Animation', 'steven', 'singUP')
+	end
 	if n == 'Object Play Animation' then
 		if v2 == 'die' then
 			if v1 == 'blackjack' then
 				_G.alive = false
+			end
+		end
+	end
+	
+	if n == 'Object Play Animation' then
+		if v2 == 'dance' then
+			if v1 == 'blackjack' then
+				_G.alive = true
+				setProperty('blackjack.y', bjDefY)
+				doTweenY('floatDown', 'blackjack', getProperty('blackjack.y') + 150, 2, 'sineInOut')
+				for i,object in pairs(listHealing) do
+					sprName = 'healFX'..i
+					local ofsX = 500
+					local ofsY = 400
+					if i == 4 then
+						ofsX = 700
+					elseif i == 1 then
+						ofsY = 700
+						ofsX = 600
+					elseif i == 2 or i == 3 then
+						ofsY = 600
+						ofsX = 570
+					end
+					makeAnimatedLuaSprite(sprName, 'heal', getMidpointX(object)-ofsX, getMidpointY(object)-ofsY)
+					addAnimationByPrefix(sprName, 'hit', 'heal', 30, false)
+					objectPlayAnimation(sprName, 'hit', true)
+					scaleObject(sprName, 5, 5)
+					updateHitbox(sprName)
+					setProperty(sprName..'.antialiasing', false)
+					addLuaSprite(sprName, true)
+					doTweenAlpha('fadeHeal'..i, sprName, 0, 1.2, 'sineIn')
+				end
 			end
 		end
 	end
@@ -216,94 +257,62 @@ function onEvent(n,v1,v2)
 		curFlashbackF = curFlashbackF + 1
 	end
 	
+	if n == 'Play Animation' and (v1 == 'singDOWN' or v1 == 'singUP' or v1 == 'singLEFT' or v1 == 'singRIGHT') and v2 == 'gf' then
+		setProperty('gf.holdTimer', 0)
+	end
+	
 	if n == 'Alter Visibility' and v1 == 'millerint' and v2 == 'false' then
 		removeLuaSprite('millerint')
 		removeLuaSprite('flashbacks')
 		removeLuaSprite('black')
+		setProperty('camHUD.visible', true)
 	end
 
-end
-
-function onBeatHit()
-	-- triggered 4 times per section
-	
-	if curBeat % 2 == 0 then
-		
-		if getProperty('steven.animation.curAnim.name') == 'dance' then
-			objectPlayAnimation('steven', 'dance', true)
-		end
-		
-		if getProperty('peter.animation.curAnim.name') == 'dance' then
-			objectPlayAnimation('peter', 'dance', true)
-		end
-	end
-	
 end
 
 function goodNoteHit(id, noteData, noteType, isSustainNote)
 	if noteType == 'Spite Note' then
-	
-		--triggerEvent('Play Animation', 'singLEFT', 'bf')
-		local index = 1
-		setProperty('defaultCamZoom', 0.3)
+		local index = noteData+1
 		
-			if noteData == 0 then
-				spitehp[index] = spitehp[index] - 10
+		spitehp[index] = spitehp[index] - 7
 
-				if spitealive[index] == true and spitehp[index] < 1 then
-					finalHit(index)
-				end
+		if spitealive[index] == true and spitehp[index] < 1 then
+			finalHit(index)
+		end
+		
+		for i,object in pairs(spitegroup) do
+			if i == index then
+				doTweenX('knockbackS'..i, object, getProperty(object..'.x') - 150, 0.2, 'cubeOut')
 				
-				for i,object in pairs(spitegroup) do
-					if i == index then
-						doTweenX('knockbackS'..i, object, getProperty(object..'.x') - 150, 0.2, 'cubeOut')
-					end
-				end
-				
-			elseif noteData == 1 then
-				index = 2
-				spitehp[index] = spitehp[index] - 10
-
-				if spitealive[index] == true and spitehp[index] < 1 then
-					finalHit(index)
-				end
-				
-				
-				for i,object in pairs(spitegroup) do
-					if i == index then
-						doTweenX('knockbackS'..i, object, getProperty(object..'.x') - 150, 0.2, 'cubeOut')
-					end
-				end
-				
-			elseif noteData == 2 then
-				index = 3
-				spitehp[index] = spitehp[index] - 10
-
-				if spitealive[index] == true and spitehp[index] < 1 then
-					finalHit(index)
-				end
-
-				for i,object in pairs(spitegroup) do
-					if i == index then
-						doTweenX('knockbackS'..i, object, getProperty(object..'.x') - 150, 0.2, 'cubeOut')
-					end
-				end
-				
-			elseif noteData == 3 then
-				index = 4
-				spitehp[index] = spitehp[index] - 10
-				
-				if spitealive[index] == true and spitehp[index] < 1 then
-					finalHit(index)
-				end
-				
-				for i,object in pairs(spitegroup) do
-					if i == index then
-						doTweenX('knockbackS'..i, object, getProperty(object..'.x') - 150, 0.2, 'cubeOut')
-					end
-				end
-				
+				makeAnimatedLuaSprite('hitFX'..i, 'spite/hit', getMidpointX(object)-500, getMidpointY(object)-500)
+				addAnimationByPrefix('hitFX'..i, 'hit', 'hit', 30, false) 
+				objectPlayAnimation('hitFX'..i, 'hit', true)
+				scaleObject('hitFX'..i, 5, 5)
+				updateHitbox('hitFX'..i)
+				setProperty('hitFX'..i..'.antialiasing', false)
+				addLuaSprite('hitFX'..i, true)
 			end
+		end
+		playSound('dmg-spite', 0.15)
+		local charPick = math.random(1,5)
+		local charName = listAttacking[charPick] 
+		local animName = getProperty(charName..'.animation.name')
+		repeat
+			charPick = math.random(1,5) 
+			charName = listAttacking[charPick] 
+			animName = getProperty(charName..'.animation.name')
+		until animName == 'idle' or string.sub(getProperty(animName),1,5) == 'dance'
+		if animName == 'idle' or string.sub(getProperty(animName),1,5) == 'dance' then
+			playHitAnim(charName)
+		end
+	end
+end
+
+function playHitAnim(name)
+	if name == 'dee' or name == 'peter' or name == 'steven' then 
+		--triggerEvent('Object Play Animation', name, 'singLEFT')
+	else
+		--characterPlayAnim(name, 'singLEFT', true)
 	end
 end
 
@@ -315,15 +324,21 @@ function finalHit(index)
 	setProperty('WEAKENED.y', (getPropertyFromClass('flixel.FlxG', 'height') * 0.75))
 	setProperty('WEAKENED.x', (getPropertyFromClass('flixel.FlxG', 'width') * 0.39))
 	setProperty('WEAKENED.alpha', 1)
-	doTweenY('Bounce', 'WEAKENED', getProperty('WEAKENED.y') - 20, 0.3, 'sineOut')
-	doTweenX('BounceX', 'WEAKENED', getProperty('WEAKENED.x') + 30, 0.3, 'sineOut')
+	doTweenY('Bounce', 'WEAKENED', getProperty('WEAKENED.y') - 20, 1, 'sineOut')
+	doTweenX('BounceX', 'WEAKENED', getProperty('WEAKENED.x') + 30, 1, 'sineOut')
 	spitealive[index] = false
 	counter = counter - 1
 end
 
 function onUpdate(elapsed)
 	if getProperty('WEAKENED.alpha') > 0 then
-		setProperty('WEAKENED.alpha', getProperty('WEAKENED.alpha') - 0.02)
+		setProperty('WEAKENED.alpha', getProperty('WEAKENED.alpha') - 0.005)
+	end
+	
+	for i=1, 4 do
+		if getProperty('hitFX'..i..'.animation.curAnim.finished') then
+			removeLuaSprite('hitFX'..i)
+		end
 	end
 	
 	for i = 0, getProperty('notes.length')-1 do
@@ -333,7 +348,7 @@ function onUpdate(elapsed)
 				removeFromGroup('notes', i)
 		end
 		
-		if getPropertyFromGroup('notes', i, 'mustPress') then
+		if getPropertyFromGroup('notes', i, 'mustPress') and getPropertyFromGroup('notes', i, 'noteType') ~= 'Spite Note' then
 			setPropertyFromGroup('notes', i, 'noteType', curType)
 			if curType == 'GF Sing' then
 				setPropertyFromGroup('notes', i, 'gfNote', true)
@@ -342,8 +357,10 @@ function onUpdate(elapsed)
 			end
 			if not default then
 				setPropertyFromGroup('notes', i, 'noAnimation', true)
+				setProperty('boyfriend.hasMissAnimations', false)
 			else
 				setPropertyFromGroup('notes', i, 'noAnimation', false)
+				setProperty('boyfriend.hasMissAnimations', true)
 			end
 		end
 	end
@@ -355,17 +372,19 @@ function onUpdate(elapsed)
 				removeFromGroup('unspawnNotes', i)
 		end
 	end
+	
+	
 
 	if mustHitSection == false then
 		setProperty('defaultCamZoom', 0.45)
 	else
-		setProperty('defaultCamZoom', 0.35)
+		setProperty('defaultCamZoom', 0.3)
 	end
 	
 	if getProperty('flashbacks.alpha') > 0 then
-		setProperty('flashbacks.alpha', getProperty('flashbacks.alpha') - 0.8 * elapsed)
-		setProperty('flashbacks.scale.x', getProperty('flashbacks.scale.x') + 0.15 * elapsed)
-		setProperty('flashbacks.scale.y', getProperty('flashbacks.scale.y') + 0.15 * elapsed)
+		setProperty('flashbacks.alpha', getProperty('flashbacks.alpha') - 0.6 * elapsed)
+		setProperty('flashbacks.scale.x', getProperty('flashbacks.scale.x') + 0.1 * elapsed)
+		setProperty('flashbacks.scale.y', getProperty('flashbacks.scale.y') + 0.1 * elapsed)
 	else
 		setProperty('flashbacks.scale.x', 1.4)
 		setProperty('flashbacks.scale.y', 1.4)

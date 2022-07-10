@@ -1,85 +1,70 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				-171
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "phone dance",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "phone dance"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				7,
 				-28
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "phone left",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "phone left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-38,
 				-63
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "phone right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "phone right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				28,
 				-187
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "phone down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "phone down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-19,
 				-60
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "phone up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "phone up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				26,
 				64
 			],
-			"anim": "ring-end",
-			"fps": 24,
-			"name": "phone ring end",
-			"indices": []
-		},
-		{
-			"offsets": [
-				113,
-				196
-			],
-			"indices": [
-				0,
-				1,
-				2
-			],
-			"fps": 24,
-			"anim": "ring-start",
 			"loop": false,
-			"name": "phone ring0"
+			"fps": 24,
+			"anim": "ring-end",
+			"indices": [],
+			"name": "phone ring end"
 		},
 		{
 			"offsets": [
@@ -87,9 +72,6 @@
 				196
 			],
 			"indices": [
-				3,
-				4,
-				5,
 				6,
 				7,
 				8,
@@ -100,20 +82,29 @@
 				13,
 				14,
 				15,
-				16,
-				17,
-				18,
-				19,
-				20,
-				21,
-				22,
-				23,
-				24,
-				25
+				16
 			],
 			"fps": 24,
 			"anim": "ring-mid",
 			"loop": true,
+			"name": "phone ring0"
+		},
+		{
+			"offsets": [
+				113,
+				196
+			],
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			],
+			"fps": 24,
+			"anim": "ring-start",
+			"loop": false,
 			"name": "phone ring0"
 		}
 	],

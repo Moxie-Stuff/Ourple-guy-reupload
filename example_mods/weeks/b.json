@@ -116,6 +116,33 @@
 				56,
 				56
 			]
+		],
+		[
+			"Watchful",
+			"plushie",
+			[
+				111,
+				31,
+				115
+			]
+		],
+		[
+			"Beatbox",
+			"cisse",
+			[
+				255,
+				203,
+				5
+			]
+		],
+		[
+			"Golden",
+			"golden",
+			[
+				217,
+				189,
+				43
+			]
 		]
 	],
 	"hideFreeplay": false,

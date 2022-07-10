@@ -1,66 +1,143 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "idle",
-			"fps": 30,
-			"name": "idle",
-			"indices": []
+			"indices": [],
+			"name": "Idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				406,
-				232
+				15,
+				39
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 30,
-			"name": "left",
-			"indices": []
+			"indices": [],
+			"name": "Left0"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				405,
-				234
+				-5,
+				4
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 30,
-			"name": "down",
-			"indices": []
+			"indices": [],
+			"name": "Down0"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				405,
-				232
+				-3,
+				56
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUP",
-			"fps": 30,
-			"name": "up",
-			"indices": []
+			"indices": [],
+			"name": "Up0"
+		},
+		{
+			"offsets": [
+				-21,
+				44
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right0"
+		},
+		{
+			"offsets": [
+				50,
+				250
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "death"
+		},
+		{
+			"offsets": [
+				50,
+				250
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "death"
 		},
 		{
 			"loop": false,
 			"offsets": [
-				404,
-				233
+				50,
+				250
 			],
-			"anim": "singRIGHT",
-			"fps": 30,
-			"name": "right",
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "death",
 			"indices": []
+		},
+		{
+			"offsets": [
+				14,
+				33
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "LeftMiss"
+		},
+		{
+			"offsets": [
+				-9,
+				-9
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "DownMiss"
+		},
+		{
+			"offsets": [
+				41,
+				-4
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "UpMiss"
+		},
+		{
+			"offsets": [
+				-20,
+				48
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "RightMiss"
 		}
 	],
 	"no_antialiasing": true,
 	"image": "characters/fredbear",
 	"position": [
 		0,
-		0
+		20
 	],
 	"healthicon": "bread",
 	"flip_x": true,
@@ -70,8 +147,8 @@
 		6
 	],
 	"camera_position": [
-		210,
-		-200
+		-250,
+		0
 	],
 	"sing_duration": 6.1,
 	"scale": 1

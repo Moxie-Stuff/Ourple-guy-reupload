@@ -2,19 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				70,
-				110
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "idle",
-			"indices": [],
-			"name": "Idle"
-		},
-		{
-			"offsets": [
-				66,
-				108
+				0,
+				0
 			],
 			"loop": false,
 			"fps": 24,
@@ -24,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				66,
-				109
+				0,
+				0
 			],
 			"loop": false,
 			"fps": 24,
@@ -35,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				97,
-				156
+				60,
+				40
 			],
 			"loop": false,
 			"fps": 24,
@@ -46,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				97,
-				156
+				60,
+				40
 			],
 			"loop": false,
 			"fps": 24,
@@ -57,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				97,
-				156
+				60,
+				40
 			],
 			"loop": false,
 			"fps": 24,
@@ -68,8 +57,8 @@
 		},
 		{
 			"offsets": [
-				97,
-				156
+				60,
+				40
 			],
 			"loop": false,
 			"fps": 24,
@@ -79,25 +68,36 @@
 		},
 		{
 			"offsets": [
-				66,
-				109
+				0,
+				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
+			"indices": [],
 			"name": "Right"
 		},
 		{
 			"offsets": [
-				66,
-				110
+				0,
+				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
+			"indices": [],
 			"name": "Left"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 30,
+			"name": "Idle",
+			"indices": []
 		}
 	],
 	"no_antialiasing": true,
@@ -106,7 +106,7 @@
 		0,
 		0
 	],
-	"healthicon": "golden",
+	"healthicon": "goldfreddy",
 	"flip_x": true,
 	"healthbar_colors": [
 		217,
@@ -118,5 +118,5 @@
 		-160
 	],
 	"sing_duration": 5.7,
-	"scale": 0.9
+	"scale": 1
 }
