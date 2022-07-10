@@ -20,6 +20,7 @@ import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
+import flixel.system.FlxSound;
 
 using StringTools;
 
@@ -152,6 +153,12 @@ class MainMenuState extends MusicBeatState
 			}
 		}
 		#end
+		
+		if(FlxG.sound.music == null) {
+			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+
+			FlxG.sound.music.fadeIn(1, 0, 0.7);
+		}
 
 		super.create();
 	}
@@ -235,6 +242,7 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new StoryMenuState());
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
+										FlxG.sound.music.fadeOut(1);
 									#if MODS_ALLOWED
 									case 'mods':
 										MusicBeatState.switchState(new ModsMenuState());

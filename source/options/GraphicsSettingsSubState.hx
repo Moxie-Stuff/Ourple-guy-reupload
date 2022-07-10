@@ -38,7 +38,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 
 		//I'd suggest using "Low Quality" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Low Quality', //Name
-			'If checked, disables some background details,\ndecreases loading times and improves performance.', //Description
+			'If checked, disables some background details and shaders,\ndecreases loading times and improves performance.', //Description
 			'lowQuality', //Save data variable name
 			'bool', //Variable type
 			false); //Default value

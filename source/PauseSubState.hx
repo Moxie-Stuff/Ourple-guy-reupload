@@ -253,10 +253,10 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.seenCutscene = false;
 					if(PlayState.isStoryMode) {
 						MusicBeatState.switchState(new StoryMenuState());
+						FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					} else {
 						MusicBeatState.switchState(new FreeplayState());
 					}
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					PlayState.changedDifficulty = false;
 					PlayState.chartingMode = false;
 			}

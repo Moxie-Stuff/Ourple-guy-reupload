@@ -17,7 +17,12 @@ import flixel.tweens.FlxTween;
 import lime.utils.Assets;
 import flixel.system.FlxSound;
 import openfl.utils.Assets as OpenFlAssets;
+import openfl.filters.ShaderFilter;
 import WeekData;
+import Shaders;
+import flixel.addons.display.FlxTiledSprite;
+import flixel.FlxCamera;
+import flixel.system.FlxAssets;
 #if MODS_ALLOWED
 import sys.FileSystem;
 #end
@@ -42,16 +47,28 @@ class FreeplayState extends MusicBeatState
 	var intendedRating:Float = 0;
 
 	private var grpSongs:FlxTypedGroup<Alphabet>;
+	private var arcadeGrp:FlxTypedGroup<ArcadeMachine>;
 	private var curPlaying:Bool = false;
 
 	private var iconArray:Array<HealthIcon> = [];
 
-	var bg:FlxSprite;
+	var bg:FlxTiledSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
+	public var camBG:FlxCamera;
+	public var camGame:FlxCamera;
+
+	var r_arrow:FlxSprite;
+	var l_arrow:FlxSprite;
+
+	var vignette:FlxSprite;
+
+	var bgTargetX:Int;
+
 	override function create()
 	{
+
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 		
@@ -90,6 +107,13 @@ class FreeplayState extends MusicBeatState
 		}
 		WeekData.loadTheFirstEnabledMod();
 
+		camGame = new FlxCamera();
+		camBG = new FlxCamera();
+		camBG.bgColor.alpha = 0;
+		FlxG.cameras.reset(camGame);
+		FlxG.cameras.add(camBG);
+		FlxCamera.defaultCameras = [camBG];
+
 		/*		//KIND OF BROKEN NOW AND ALSO PRETTY USELESS//
 
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
@@ -101,20 +125,33 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		bg.antialiasing = ClientPrefs.globalAntialiasing;
+		bg = new FlxTiledSprite(Paths.image('freeplaywall', 'preload'), FlxG.width * 3, FlxG.width * 3, true, true);
+		bg.antialiasing = false;
+		bg.scrollFactor.set(0.8, 0.8);
+		bgTargetX = 10;
+		bg.cameras = [camGame];
 		add(bg);
-		bg.screenCenter();
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
+
+		arcadeGrp = new FlxTypedGroup<ArcadeMachine>();
+		add(arcadeGrp);
 
 		for (i in 0...songs.length)
 		{
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
-			grpSongs.add(songText);
+			//grpSongs.add(songText);
+
+			var arcadeMachine:ArcadeMachine = new ArcadeMachine((100 * i) + 30, 200);
+			arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
+			arcadeMachine.coolArcadeTargetX = i;
+			arcadeGrp.add(arcadeMachine);
+			arcadeMachine.scale.set(1.5, 1.5);
+			arcadeMachine.antialiasing = false;
+			arcadeMachine.cameras = [camBG];
 
 			if (songText.width > 980)
 			{
@@ -135,7 +172,6 @@ class FreeplayState extends MusicBeatState
 
 			// using a FlxGroup is too much fuss!
 			iconArray.push(icon);
-			add(icon);
 
 			// songText.x += 40;
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
@@ -145,20 +181,23 @@ class FreeplayState extends MusicBeatState
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
+		scoreText.cameras = [camBG];
 
 		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
 		add(scoreBG);
+		scoreBG.cameras = [camBG];
 
 		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
 		diffText.font = scoreText.font;
 		add(diffText);
+		diffText.cameras = [camBG];
 
 		add(scoreText);
 
 		if(curSelected >= songs.length) curSelected = 0;
-		bg.color = songs[curSelected].color;
-		intendedColor = bg.color;
+		//bg.color = songs[curSelected].color;
+		//intendedColor = bg.color;
 
 		if(lastDifficultyName == '')
 		{
@@ -191,6 +230,7 @@ class FreeplayState extends MusicBeatState
 		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
 		textBG.alpha = 0.6;
 		add(textBG);
+		textBG.cameras = [camBG];
 
 		#if PRELOAD_ALL
 		var leText:String = "Press SPACE to listen to the Song / Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
@@ -203,7 +243,42 @@ class FreeplayState extends MusicBeatState
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
+		text.cameras = [camBG];
+
+		r_arrow = new FlxSprite(900, 300);
+		r_arrow.frames = Paths.getSparrowAtlas('freeplayarrow', 'preload');
+		r_arrow.animation.addByPrefix('normal', 'normal', 12, true);
+		r_arrow.animation.addByPrefix('press', 'press', 16, false);
+		r_arrow.setGraphicSize(Std.int(r_arrow.width * 1.5));
+		r_arrow.updateHitbox();
+		r_arrow.animation.play('normal', true);
+		add(r_arrow);
+
+		l_arrow = new FlxSprite(250, 300);
+		l_arrow.frames = Paths.getSparrowAtlas('freeplayarrow', 'preload');
+		l_arrow.animation.addByPrefix('normal', 'normal', 12, true);
+		l_arrow.animation.addByPrefix('press', 'press', 16, false);
+		l_arrow.setGraphicSize(Std.int(l_arrow.width * 1.5));
+		l_arrow.flipX = true;
+		l_arrow.updateHitbox();
+		l_arrow.animation.play('normal', true);
+		add(l_arrow);
+		
+
+		FlxG.sound.playMusic(Paths.music('8bitMenu'), 0);
+
+		FlxG.sound.music.fadeIn(2, 0, 0.8);
+
+		vignette = new FlxSprite(0, 0);
+		vignette.loadGraphic(Paths.image('menuvig', 'preload'));
+		vignette.screenCenter();
+		vignette.alpha = 0.85;
+		vignette.cameras = [camBG];
+		add(vignette);
+
 		super.create();
+		camGame.setFilters([new ShaderFilter(new PincushionShader())]);
+		camGame.filtersEnabled = !ClientPrefs.lowQuality;
 	}
 
 	override function closeSubState() {
@@ -248,6 +323,8 @@ class FreeplayState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
+		bg.x = FlxMath.lerp(bg.x, (FlxMath.remapToRange(bgTargetX, 0, 1, 0, 1.3)), CoolUtil.boundTo(elapsed * 9.6, 0, 1));
+
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, CoolUtil.boundTo(elapsed * 24, 0, 1)));
 		lerpRating = FlxMath.lerp(lerpRating, intendedRating, CoolUtil.boundTo(elapsed * 12, 0, 1));
 
@@ -279,18 +356,26 @@ class FreeplayState extends MusicBeatState
 
 		if(songs.length > 1)
 		{
-			if (upP)
+			if (controls.UI_LEFT_P)
 			{
 				changeSelection(-shiftMult);
+				l_arrow.animation.play('press', false);
+				l_arrow.animation.finishCallback = function (name:String) {
+					l_arrow.animation.play('normal', true);
+				};
 				holdTime = 0;
 			}
-			if (downP)
+			if (controls.UI_RIGHT_P)
 			{
 				changeSelection(shiftMult);
+				r_arrow.animation.play('press', false);
+				r_arrow.animation.finishCallback = function (name:String) {
+					r_arrow.animation.play('normal', true);
+				};
 				holdTime = 0;
 			}
 
-			if(controls.UI_DOWN || controls.UI_UP)
+			if(controls.UI_LEFT_P || controls.UI_RIGHT_P)
 			{
 				var checkLastHold:Int = Math.floor((holdTime - 0.5) * 10);
 				holdTime += elapsed;
@@ -304,11 +389,11 @@ class FreeplayState extends MusicBeatState
 			}
 		}
 
-		if (controls.UI_LEFT_P)
-			changeDiff(-1);
-		else if (controls.UI_RIGHT_P)
-			changeDiff(1);
-		else if (upP || downP) changeDiff();
+		//if (controls.UI_LEFT_P)
+			//changeDiff(-1);
+		//else if (controls.UI_RIGHT_P)
+			//changeDiff(1);
+		if (controls.UI_LEFT_P || controls.UI_RIGHT_P) changeDiff();
 
 		if (controls.BACK)
 		{
@@ -317,7 +402,10 @@ class FreeplayState extends MusicBeatState
 				colorTween.cancel();
 			}
 			FlxG.sound.play(Paths.sound('cancelMenu'));
+			FlxG.sound.music.fadeOut(1);
 			MusicBeatState.switchState(new MainMenuState());
+			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+			FlxG.sound.music.fadeIn(1, 0, 0.7);
 		}
 
 		if(ctrl)
@@ -478,6 +566,17 @@ class FreeplayState extends MusicBeatState
 				// item.setGraphicSize(Std.int(item.width));
 			}
 		}
+
+		var i = 0;
+		for(item in arcadeGrp.members) {
+			item.coolArcadeTargetX = i - curSelected;
+			i++;
+		}
+
+		var fucker:Int = 0;
+
+		bgTargetX = (fucker - curSelected) * 55;
+		fucker++;
 		
 		Paths.currentModDirectory = songs[curSelected].folder;
 		PlayState.storyWeek = songs[curSelected].week;
@@ -550,4 +649,22 @@ class SongMetadata
 		this.folder = Paths.currentModDirectory;
 		if(this.folder == null) this.folder = '';
 	}
+}
+
+class ArcadeMachine extends FlxSprite
+{
+
+    public var coolArcadeTargetX:Int;
+
+    public function new(?X:Float = 0, ?Y:Float = 0, ?SimpleGraphic:FlxGraphicAsset)
+        {
+            super(X, Y);
+        }
+
+
+    override function update(elapsed:Float) {
+            x = FlxMath.lerp(x, (FlxMath.remapToRange(coolArcadeTargetX, 0, 1, 0, 1.3) * 460) + 510, CoolUtil.boundTo(elapsed * 9.6, 0, 1));
+            super.update(elapsed);
+        } 
+
 }

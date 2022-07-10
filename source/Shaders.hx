@@ -92,6 +92,34 @@ class ChromaticAberrationEffect extends Effect
 
 }
 
+class PincushionShader extends FlxShader
+{
+  public function new(){
+		super('
+      uniform vec2 iResolution;
+      uniform float iTime;
+      void main()
+      {
+          vec2 uv = openfl_TextureCoordv;
+          vec2 st = uv - 0.5;
+          float theta = atan(st.x, st.y);
+          float radius = sqrt(dot(st, st));
+          radius *= 1.0 + -0.75 * pow(radius, 2.3);
+      
+          gl_FragColor = flixel_texture2D(bitmap, vec2( 0.5 + sin(theta) * radius, uv.y));
+      }
+    ');
+  }
+}
+
+class PincushionEffect extends Effect
+{
+  public var shader:PincushionShader;
+  public function new(){
+	shader = new PincushionShader();
+  }
+}
+
 
 class ScanlineEffect extends Effect
 {

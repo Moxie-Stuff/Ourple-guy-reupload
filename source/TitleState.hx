@@ -78,6 +78,10 @@ class TitleState extends MusicBeatState
 	var mustUpdate:Bool = false;
 	
 	var titleJSON:TitleData;
+	var ourple:FlxSprite;
+	var startText:FlxText;
+
+	var vhsFx:FlxSprite;
 	
 	public static var updateVersion:String = '';
 
@@ -265,12 +269,13 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
-		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
+		logoBl = new FlxSprite(titleJSON.titlex + 155, titleJSON.titley + 85);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
 		logoBl.animation.play('bump');
+		logoBl.scale.set(0.65, 0.65);
 		logoBl.updateHitbox();
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
@@ -306,9 +311,14 @@ class TitleState extends MusicBeatState
 				gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 				gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		}
-		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
-		
-		add(gfDance);
+		gfDance.antialiasing = ClientPrefs.globalAntialiasing; //psych team should honestly add ourple as a title screen easter egg
+
+		ourple = new FlxSprite(800, FlxG.height - 535);
+		ourple.loadGraphic(Paths.image('ourpletitle', 'preload'));
+		ourple.scale.set(1.5, 1.5);
+		ourple.antialiasing = false;
+		add(ourple);
+
 		add(logoBl);
 
 		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
@@ -334,7 +344,15 @@ class TitleState extends MusicBeatState
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 		// titleText.screenCenter(X);
-		add(titleText);
+
+		startText = new FlxText(60, 555, FlxG.width, "Press Enter to Begin", 36);
+		startText.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		startText.borderSize = 2;
+		startText.active = false;
+		startText.antialiasing = false;
+		add(startText);
+
+		
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.screenCenter();
@@ -365,6 +383,17 @@ class TitleState extends MusicBeatState
 		ngSpr.updateHitbox();
 		ngSpr.screenCenter(X);
 		ngSpr.antialiasing = ClientPrefs.globalAntialiasing;
+
+		vhsFx = new FlxSprite(0, 0);
+		vhsFx.frames = Paths.getSparrowAtlas('VHS');
+		vhsFx.animation.addByPrefix('VHS', 'VHS', 24, true);
+		vhsFx.animation.play('VHS');
+		vhsFx.screenCenter();
+		vhsFx.scrollFactor.set(0, 0);
+		vhsFx.scale.set(1.5, 1);
+		vhsFx.alpha = 0.5;
+		vhsFx.blend = "hardlight";
+		add(vhsFx);
 
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
@@ -562,65 +591,6 @@ class TitleState extends MusicBeatState
 			switch (sickBeats)
 			{
 				case 1:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Psych Engine by'], 15);
-					#else
-					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-					#end
-				// credTextShit.visible = true;
-				case 3:
-					#if PSYCH_WATERMARKS
-					addMoreText('Shadow Mario', 15);
-					addMoreText('RiverOaken', 15);
-					addMoreText('shubs', 15);
-					#else
-					addMoreText('present');
-					#end
-				// credTextShit.text += '\npresent...';
-				// credTextShit.addText();
-				case 4:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = 'In association \nwith';
-				// credTextShit.screenCenter();
-				case 5:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
-					#else
-					createCoolText(['In association', 'with'], -40);
-					#end
-				case 7:
-					addMoreText('newgrounds', -40);
-					ngSpr.visible = true;
-				// credTextShit.text += '\nNewgrounds';
-				case 8:
-					deleteCoolText();
-					ngSpr.visible = false;
-				// credTextShit.visible = false;
-
-				// credTextShit.text = 'Shoutouts Tom Fulp';
-				// credTextShit.screenCenter();
-				case 9:
-					createCoolText([curWacky[0]]);
-				// credTextShit.visible = true;
-				case 11:
-					addMoreText(curWacky[1]);
-				// credTextShit.text += '\nlmao';
-				case 12:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = "Friday";
-				// credTextShit.screenCenter();
-				case 13:
-					addMoreText('Friday');
-				// credTextShit.visible = true;
-				case 14:
-					addMoreText('Night');
-				// credTextShit.text += '\nNight';
-				case 15:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
-				case 16:
 					skipIntro();
 			}
 		}

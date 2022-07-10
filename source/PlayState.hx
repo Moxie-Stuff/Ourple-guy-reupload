@@ -113,6 +113,8 @@ class PlayState extends MusicBeatState
 	public var songSpeed(default, set):Float = 1;
 	public var songSpeedType:String = "multiplicative";
 	public var noteKillOffset:Float = 350;
+
+	public static var gotOurpleNotes:Bool = true;
 	
 	public var boyfriendGroup:FlxSpriteGroup;
 	public var dadGroup:FlxSpriteGroup;
@@ -232,8 +234,11 @@ class PlayState extends MusicBeatState
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
 	public var scoreTxt:FlxText;
+	var songSign:FlxSprite;
+	var songSignTxt:FlxText;
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
+	var songComposer:String;
 
 	public static var campaignScore:Int = 0;
 	public static var campaignMisses:Int = 0;
@@ -285,8 +290,56 @@ class PlayState extends MusicBeatState
 	{
 		Paths.clearStoredMemory();
 
+		var songname_l:String = SONG.song.toLowerCase();
+
+		if (songname_l == 'criminal' || songname_l == 'bite' || songname_l == 'beatbox' || songname_l == 'blubber' || songname_l == 'trapped') gotOurpleNotes = false;
+		else gotOurpleNotes = true;
+
 		// for lua
 		instance = this;
+
+		switch(songname_l) {
+			case 'guy':
+				songComposer = 'kiwiquest';
+			case 'midnight':
+				songComposer = 'kiwiquest';
+			case 'terminated':
+				songComposer = 'METR0GARD3N';
+			case 'lurking':
+				songComposer = 'MewMarissa';
+			case 'lore':
+				songComposer = 'kiwiquest';
+			case 'blubber':
+				songComposer = 'kiwiquest';
+			case 'golden':
+				songComposer = 'Zeroh';
+			case 'performance':
+				songComposer = 'MewMarissa';
+			case 'trapped':
+				songComposer = 'headdzo';
+			case 'bite':
+				songComposer = 'kiwiquest';
+			case 'go fish':
+				songComposer = 'GalXE';
+			case 'watchful':
+				songComposer = 'METR0GARD3N';
+			case 'restless':
+				songComposer = 'Xhitest';
+			case 'beatbox':
+				songComposer = 'METR0GARD3N';
+			case 'showtime':
+				songComposer = 'Polyfield';
+			case 'man':
+				songComposer = 'justisaac';
+			case 'followed':
+				songComposer = 'METR0GARD3N';
+			case 'fazfuck news':
+				songComposer = 'kiwiquest';
+			case 'criminal':
+				songComposer = 'River';
+			case 'miller':
+				songComposer = 'kiwiquest\nheaddzo\nMETR0GARD3N\nPolyfield\nGalxe';
+		}
 
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
@@ -712,6 +765,8 @@ class PlayState extends MusicBeatState
 				camGame.setFilters(shaderArray);
 				camHUD.useBgAlphaBlending = true;
 				camHUD.setFilters(shaderArray);
+				camGame.filtersEnabled = !ClientPrefs.lowQuality;
+				camHUD.filtersEnabled = !ClientPrefs.lowQuality;
 		}
 
 		if(isPixelStage) {
@@ -1072,6 +1127,19 @@ class PlayState extends MusicBeatState
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
+		songSign = new FlxSprite(-400, 180).loadGraphic(Paths.image('songSign', 'preload'));
+		songSign.scrollFactor.set();
+		songSign.visible = !ClientPrefs.hideHud;
+		songSign.antialiasing = false;
+		if (songname_l != 'miller' && songname_l != 'criminal') add(songSign);
+
+		songSignTxt = new FlxText(-390, 190, 600, SONG.song + '\n' + songComposer);
+		songSignTxt.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		songSignTxt.scrollFactor.set();
+		songSignTxt.borderSize = 1.25;
+		songSignTxt.visible = !ClientPrefs.hideHud;
+		add(songSignTxt);
+
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
@@ -1095,6 +1163,8 @@ class PlayState extends MusicBeatState
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+		songSign.cameras = [camHUD];
+		songSignTxt.cameras = [camHUD];
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -3404,7 +3474,6 @@ class PlayState extends MusicBeatState
 					CustomFadeTransition.nextCamera = null;
 				}
 				MusicBeatState.switchState(new FreeplayState());
-				FlxG.sound.playMusic(Paths.music('freakyMenu'));
 				changedDifficulty = false;
 			}
 			transitioning = true;
@@ -4340,7 +4409,7 @@ class PlayState extends MusicBeatState
 	
 	
 	
-	override function beatHit()
+	override function beatHit() //Patrick: I love being ourple!
 	{
 		super.beatHit();
 
@@ -4395,6 +4464,16 @@ class PlayState extends MusicBeatState
 		if (curBeat % dad.danceEveryNumBeats == 0 && dad.animation.curAnim != null && !dad.animation.curAnim.name.startsWith('sing') && !dad.stunned)
 		{
 			dad.dance();
+		}
+
+		if (songname_l != 'miller' ? curBeat == 1 : curBeat == 248) {
+			FlxTween.tween(songSign, {x: 40}, 1, {ease: FlxEase.quadOut});
+			FlxTween.tween(songSignTxt, {x: 50}, 1, {ease: FlxEase.quadOut});
+		}
+
+		if (songname_l != 'miller' ? curBeat == 8 : curBeat == 256) { 
+			FlxTween.tween(songSign, {x: -400}, 1.5, {ease: FlxEase.quadIn});
+			FlxTween.tween(songSignTxt, {x: -390}, 1.5, {ease: FlxEase.quadIn});
 		}
 
 		switch (curStage)
