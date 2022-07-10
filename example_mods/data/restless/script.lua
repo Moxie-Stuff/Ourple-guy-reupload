@@ -45,7 +45,9 @@ function onTimerCompleted(t, timer, loops)
 		startCountdown()
 		for i=0, getProperty('opponentStrums.length')-1 do
 			setPropertyFromGroup('opponentStrums', i, 'visible', false)
-			setPropertyFromGroup('playerStrums', i, 'x', getPropertyFromGroup('playerStrums', i, 'x') - 325)
+			if not getPropertyFromClass('ClientPrefs', 'middleScroll') then
+				setPropertyFromGroup('playerStrums', i, 'x', getPropertyFromGroup('playerStrums', i, 'x') - 325)
+			end
 		end
 		close(true)
 	end

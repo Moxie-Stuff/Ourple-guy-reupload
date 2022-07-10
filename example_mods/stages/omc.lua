@@ -1,6 +1,7 @@
 function onCreate() 
 
 	precacheImage('cassidy-dead')
+	setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'crushed')
 	setPropertyFromClass('GameOverSubstate', 'characterName', 'cassidy-dead')
 	makeLuaSprite('lake','bg/omc', -1100, 0)
 	scaleObject('lake', 3, 3)

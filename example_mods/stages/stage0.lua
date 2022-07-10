@@ -8,6 +8,7 @@ local followchars = true;
 
 function onCreate() 
 	setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'crushed')
+	setPropertyFromClass('GameOverSubstate', 'loopSoundName', 'wind')
 	makeLuaSprite('backstage','bg/stage0/showtime', 0, 0)
 	scaleObject('backstage', 2.8, 2.8)
 	updateHitbox('backstage')
@@ -44,8 +45,7 @@ end
 
 
 function onCreatePost()
-	setProperty('gf.visible', false)
-
+	if not getPropertyFromClass('clientPrefs', 'middleScroll') then
 	setPropertyFromGroup('playerStrums', 0, 'x', defaultOpponentStrumX0)
 	setPropertyFromGroup('playerStrums', 1, 'x', defaultOpponentStrumX1)
 
@@ -64,6 +64,5 @@ function onCreatePost()
 	setPropertyFromGroup('opponentStrums', 3, 'x', defaultPlayerStrumX3 + 0)
 
 	setPropertyFromGroup('opponentStrums', 4, 'x', defaultPlayerStrumX4 + 0)
-	
-	close(true)
+	end
 end
