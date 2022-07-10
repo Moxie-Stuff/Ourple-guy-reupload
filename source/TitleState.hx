@@ -249,7 +249,7 @@ class TitleState extends MusicBeatState
 			if(FlxG.sound.music == null) {
 				FlxG.sound.playMusic(Paths.music('TitleScreen'), 0);
 
-				FlxG.sound.music.fadeIn(4, 0, 0.7);
+				FlxG.sound.music.fadeIn(1, 0, 0.7);
 			}
 		}
 
@@ -471,7 +471,10 @@ class TitleState extends MusicBeatState
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
 					if (mustUpdate) {
-						MusicBeatState.switchState(new OutdatedState());
+						FlxG.sound.music.fadeOut(1);
+						MusicBeatState.switchState(new MainMenuState());
+						FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+						FlxG.sound.music.fadeIn(1, 0, 0.7);
 					} else {
 						FlxG.sound.music.fadeOut(1);
 						MusicBeatState.switchState(new MainMenuState());
