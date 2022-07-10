@@ -290,15 +290,13 @@ class PlayState extends MusicBeatState
 	{
 		Paths.clearStoredMemory();
 
-		var songname_l:String = SONG.song.toLowerCase();
-
 		if (songname_l == 'criminal' || songname_l == 'bite' || songname_l == 'beatbox' || songname_l == 'blubber' || songname_l == 'trapped') gotOurpleNotes = false;
 		else gotOurpleNotes = true;
 
 		// for lua
 		instance = this;
 
-		switch(songname_l) {
+		switch(SONG.song.toLowerCase()) {
 			case 'guy':
 				songComposer = 'kiwiquest';
 			case 'midnight':
@@ -2416,9 +2414,9 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		if(ratingName == '?') {
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName;
+			scoreTxt.text = 'How Ourple You Are : ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName;
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
+			scoreTxt.text = 'How Ourple You Are : ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
 		}
 
 		if(botplayTxt.visible) {
