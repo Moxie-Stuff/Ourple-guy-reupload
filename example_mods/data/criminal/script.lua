@@ -1,7 +1,10 @@
 local allowCountdown = false
 local freaked = false
+local xx = -285
+local yy = -250
 function onCreate()
 	setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'scream')
+	snapCamFollow(xx, yy)
 end
 function onCreatePost()
 	setProperty('timeBar.visible', false)

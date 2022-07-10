@@ -780,6 +780,12 @@ class FunkinLua {
 			//trace('Triggered event: ' + name + ', ' + value1 + ', ' + value2);
 		});
 
+		Lua_helper.add_callback(lua, "snapCamFollow", function(arg1:Dynamic, arg2:Dynamic) {
+			var value1:Float = arg1;
+			var value2:Float = arg2;
+			PlayState.instance.snapCamFollowToPos(value1, value2);
+		});
+
 		Lua_helper.add_callback(lua, "startCountdown", function(variable:String) {
 			PlayState.instance.startCountdown();
 		});
