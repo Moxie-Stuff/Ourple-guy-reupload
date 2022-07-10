@@ -21,6 +21,7 @@ import openfl.filters.ShaderFilter;
 import WeekData;
 import Shaders;
 import flixel.addons.display.FlxTiledSprite;
+import flixel.util.FlxSave;
 import flixel.FlxCamera;
 import flixel.system.FlxAssets;
 #if MODS_ALLOWED
@@ -106,25 +107,32 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
+		FreeplaySaves.loadShit();
+
 		addSong('guy', 0, 'guy', 0xFF000000, 'unlocked');
 		addSong('midnight', 0, 'orange', 0xFF000000, 'unlocked');
 		addSong('terminated', 0, 'henryt', 0xFF000000, 'unlocked');
-		addSong('lurking', 0, 'guy', 0xFF000000, 'locked');
-		addSong('lore', 0, 'guy', 0xFF000000, 'locked');
-		addSong('blubber', 0, 'guy', 0xFF000000, 'locked');
-		//addSong('golden', 0, 'guy', 0xFF000000, 'locked');
-		addSong('performance', 0, 'guy', 0xFF000000, 'locked');
-		addSong('bite', 0, 'guy', 0xFF000000, 'locked');
-		addSong('trapped', 0, 'guy', 0xFF000000, 'locked');
-		addSong('go fish', 0, 'guy', 0xFF000000, 'locked');
-		//addSong('watchful', 0, 'guy', 0xFF000000, 'locked');
-		addSong('restless', 0, 'guy', 0xFF000000, 'locked');
-		//addSong('beatbox', 0, 'guy', 0xFF000000, 'locked');
-		addSong('showtime', 0, 'guy', 0xFF000000, 'locked');
-		addSong('man', 0, 'guy', 0xFF000000, 'locked');
-		addSong('followed', 0, 'guy', 0xFF000000, 'locked');
-		//addSong('fazfuck news', 0, 'guy', 0xFF000000, 'locked');
-		addSong('criminal', 0, 'guy', 0xFF000000, 'locked');
+		addSong('lurking', 0, 'guy', 0xFF000000, FlxG.save.data.lurkingLock);
+		addSong('lore', 0, 'guy', 0xFF000000, FlxG.save.data.loreLock);
+		addSong('blubber', 0, 'guy', 0xFF000000, FlxG.save.data.blubberLock);
+		//addSong('golden', 0, 'guy', 0xFF000000, FlxG.save.data.goldenLock);
+		addSong('performance', 0, 'guy', 0xFF000000, FlxG.save.data.performanceLock);
+		addSong('bite', 0, 'guy', 0xFF000000, FlxG.save.data.biteLock);
+		addSong('trapped', 0, 'guy', 0xFF000000, FlxG.save.data.trappedLock);
+		addSong('go fish', 0, 'guy', 0xFF000000, FlxG.save.data.gofishLock);
+		//addSong('watchful', 0, 'guy', 0xFF000000, FlxG.save.data.watchfulLock);
+		addSong('restless', 0, 'guy', 0xFF000000, FlxG.save.data.restlessLock);
+		//addSong('beatbox', 0, 'guy', 0xFF000000, FlxG.save.data.beatboxLock);
+		addSong('showtime', 0, 'guy', 0xFF000000, FlxG.save.data.showtimeLock);
+		addSong('man', 0, 'guy', 0xFF000000, FlxG.save.data.manLock);
+		addSong('followed', 0, 'guy', 0xFF000000, FlxG.save.data.followedLock);
+		//addSong('fazfuck news', 0, 'guy', 0xFF000000, FlxG.save.data.fazfuckLock);
+		addSong('criminal', 0, 'guy', 0xFF000000, FlxG.save.data.criminalLock);
+		#if !debug 
+			if (everyFreeplaySongBeaten()) addSong('miller', 0, 'guy', 0xFF000000, 'unlocked');
+		#else
+		addSong('miller', 0, 'guy', 0xFF000000, 'unlocked');
+		#end
 
 		WeekData.loadTheFirstEnabledMod();
 
@@ -134,8 +142,6 @@ class FreeplayState extends MusicBeatState
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camBG);
 		FlxCamera.defaultCameras = [camBG];
-
-
 
 		/*		//KIND OF BROKEN NOW AND ALSO PRETTY USELESS//
 
@@ -170,12 +176,20 @@ class FreeplayState extends MusicBeatState
 
 			var arcadeMachine:ArcadeMachine = new ArcadeMachine((100 * i) + 30, 200);
 			if (songs[i].lockstatus == 'unlocked') arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
-			else arcadeMachine.loadGraphic(Paths.image('machines/blank', 'preload'));
+			else {
+			#if !debug
+				arcadeMachine.loadGraphic(Paths.image('machines/blank', 'preload'));
+			#else
+				arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
+			#end
+			}
 			arcadeMachine.coolArcadeTargetX = i;
 			arcadeGrp.add(arcadeMachine);
 			arcadeMachine.scale.set(1.5, 1.5);
 			arcadeMachine.antialiasing = false;
 			arcadeMachine.cameras = [camBG];
+			
+	
 
 			if (songText.width > 980)
 			{
@@ -346,6 +360,28 @@ class FreeplayState extends MusicBeatState
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
+
+		#if debug
+		if (FlxG.keys.justPressed.NINE) {
+			FreeplaySaves.lurkingLock = 'locked';
+			FreeplaySaves.loreLock = 'locked';
+			FreeplaySaves.blubberLock = 'locked';
+			FreeplaySaves.goldenLock = 'locked';
+			FreeplaySaves.performanceLock = 'locked';
+			FreeplaySaves.biteLock = 'locked';
+			FreeplaySaves.trappedLock = 'locked';
+			FreeplaySaves.gofishLock = 'locked';
+			FreeplaySaves.watchfulLock = 'locked';
+			FreeplaySaves.restlessLock = 'locked';
+			FreeplaySaves.beatboxLock = 'locked';
+			FreeplaySaves.showtimeLock = 'locked';
+			FreeplaySaves.manLock = 'locked';
+			FreeplaySaves.followedLock = 'locked';
+			FreeplaySaves.fazfuckLock = 'locked';
+			FreeplaySaves.criminalLock = 'locked';
+			FreeplaySaves.saveShit();
+		}
+		#end
 
 		bg.x = FlxMath.lerp(bg.x, (FlxMath.remapToRange(bgTargetX, 0, 1, 0, 1.3)), CoolUtil.boundTo(elapsed * 9.6, 0, 1));
 
@@ -653,6 +689,10 @@ class FreeplayState extends MusicBeatState
 		scoreBG.x = FlxG.width - (scoreBG.scale.x / 2);
 		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
 		diffText.x -= diffText.width / 2;
+	}
+
+	function everyFreeplaySongBeaten() {
+			return FreeplaySaves.lurkingLock == 'beaten' && FreeplaySaves.loreLock == 'beaten' && FreeplaySaves.blubberLock == 'beaten' && FreeplaySaves.goldenLock == 'beaten' && FreeplaySaves.performanceLock == 'beaten' && FreeplaySaves.trappedLock == 'beaten' && FreeplaySaves.biteLock == 'beaten' && FreeplaySaves.gofishLock == 'beaten' && FreeplaySaves.watchfulLock == 'beaten' && FreeplaySaves.restlessLock == 'beaten' && FreeplaySaves.beatboxLock == 'beaten' && FreeplaySaves.showtimeLock == 'beaten' && FreeplaySaves.manLock == 'beaten' && FreeplaySaves.followedLock == 'beaten' && FreeplaySaves.fazfuckLock == 'beaten' && FreeplaySaves.criminalLock == 'beaten';
 	}
 }
 

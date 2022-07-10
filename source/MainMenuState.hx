@@ -153,7 +153,7 @@ class MainMenuState extends MusicBeatState
 			}
 		}
 		#end
-		
+
 		if(FlxG.sound.music == null) {
 			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 
@@ -202,6 +202,7 @@ class MainMenuState extends MusicBeatState
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
+				FlxG.sound.music.stop();
 				MusicBeatState.switchState(new TitleState());
 			}
 

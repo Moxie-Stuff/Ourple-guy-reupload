@@ -305,39 +305,57 @@ class PlayState extends MusicBeatState
 				songComposer = 'METR0GARD3N';
 			case 'lurking':
 				songComposer = 'MewMarissa';
+				FreeplaySaves.lurkingLock = 'unlocked';
 			case 'lore':
 				songComposer = 'kiwiquest';
+				FreeplaySaves.loreLock = 'unlocked';
 			case 'blubber':
 				songComposer = 'kiwiquest';
+				FreeplaySaves.blubberLock = 'unlocked';
 			case 'golden':
 				songComposer = 'Zeroh';
+				FreeplaySaves.goldenLock = 'unlocked';
 			case 'performance':
 				songComposer = 'MewMarissa';
+				FreeplaySaves.performanceLock = 'unlocked';
 			case 'trapped':
 				songComposer = 'headdzo';
+				FreeplaySaves.trappedLock = 'unlocked';
 			case 'bite':
 				songComposer = 'kiwiquest';
+				FreeplaySaves.biteLock = 'unlocked';
 			case 'go fish':
 				songComposer = 'GalXE';
+				FreeplaySaves.gofishLock = 'unlocked';
 			case 'watchful':
 				songComposer = 'METR0GARD3N';
+				FreeplaySaves.watchfulLock = 'unlocked';
 			case 'restless':
 				songComposer = 'Xhitest';
+				FreeplaySaves.restlessLock = 'unlocked';
 			case 'beatbox':
 				songComposer = 'METR0GARD3N';
+				FreeplaySaves.beatboxLock = 'unlocked';
 			case 'showtime':
 				songComposer = 'Polyfield';
+				FreeplaySaves.showtimeLock = 'unlocked';
 			case 'man':
 				songComposer = 'justisaac';
+				FreeplaySaves.manLock = 'unlocked';
 			case 'followed':
 				songComposer = 'METR0GARD3N';
+				FreeplaySaves.followedLock = 'unlocked';
 			case 'fazfuck news':
 				songComposer = 'kiwiquest';
+				FreeplaySaves.fazfuckLock = 'unlocked';
 			case 'criminal':
 				songComposer = 'River';
+				FreeplaySaves.criminalLock = 'unlocked';
 			case 'miller':
 				songComposer = 'kiwiquest\nheaddzo\nMETR0GARD3N\nPolyfield\nGalxe';
 		}
+
+		FreeplaySaves.saveShit();
 
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
@@ -3472,7 +3490,44 @@ class PlayState extends MusicBeatState
 					CustomFadeTransition.nextCamera = null;
 				}
 				MusicBeatState.switchState(new FreeplayState());
+				FreeplaySaves.saveShit();
 				changedDifficulty = false;
+
+				switch(SONG.song.toLowerCase()) {
+					case 'lurking':
+						FreeplaySaves.lurkingLock = 'beaten';
+					case 'lore':
+						FreeplaySaves.loreLock = 'beaten';
+					case 'blubber':
+						FreeplaySaves.blubberLock = 'beaten';
+					case 'golden':
+						FreeplaySaves.goldenLock = 'beaten';
+					case 'performance':
+						FreeplaySaves.performanceLock = 'beaten';
+					case 'trapped':
+						FreeplaySaves.trappedLock = 'beaten';
+					case 'bite':
+						FreeplaySaves.biteLock = 'beaten';
+					case 'go fish':
+						FreeplaySaves.gofishLock = 'beaten';
+					case 'watchful':
+						FreeplaySaves.watchfulLock = 'beaten';
+					case 'restless':
+						FreeplaySaves.restlessLock = 'beaten';
+					case 'beatbox':
+						FreeplaySaves.beatboxLock = 'beaten';
+					case 'showtime':
+						FreeplaySaves.showtimeLock = 'beaten';
+					case 'man':
+						FreeplaySaves.manLock = 'beaten';
+					case 'followed':
+						FreeplaySaves.followedLock = 'beaten';
+					case 'fazfuck news':
+						FreeplaySaves.fazfuckLock = 'beaten';
+					case 'criminal':
+						FreeplaySaves.criminalLock = 'beaten';
+				}
+
 			}
 			transitioning = true;
 		}
