@@ -1,4 +1,0 @@
-Sets all BF Notes to a noteType
-Value 1: noteType Name
-
-Value 2:
