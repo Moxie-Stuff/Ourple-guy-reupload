@@ -45,6 +45,17 @@
 			"indices": []
 		},
 		{
+			"offsets": [
+				0,
+				-171
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "phone0"
+		},
+		{
 			"loop": false,
 			"offsets": [
 				1,
@@ -53,25 +64,38 @@
 			"anim": "ring",
 			"fps": 24,
 			"name": "phone ring",
-			"indices": []
-		},
-		{
-			"offsets": [
+			"indices": [
 				0,
-				-171
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "idle",
-			"loop": false,
-			"name": "phone0"
+				1,
+				2,
+				3,
+				4,
+				5,
+				3,
+				4,
+				5,
+				3,
+				4,
+				5,
+				3,
+				4,
+				5,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+			]
 		}
 	],
-	"no_antialiasing": false,
+	"no_antialiasing": true,
 	"image": "characters/golden_phone",
 	"position": [
-		30,
-		220
+		270,
+		-100
 	],
 	"healthicon": "phone",
 	"flip_x": false,
@@ -81,8 +105,8 @@
 		77
 	],
 	"camera_position": [
-		-50,
-		150
+		-70,
+		190
 	],
 	"sing_duration": 4,
 	"scale": 1
