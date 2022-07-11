@@ -129,9 +129,9 @@ class FreeplayState extends MusicBeatState
 		addSong('fazfuck news', 0, 'guy', 0xFF000000, FlxG.save.data.fazfuckLock);
 		addSong('criminal', 0, 'guy', 0xFF000000, FlxG.save.data.criminalLock);
 		#if !debug 
-			if (everyFreeplaySongBeaten() || FlxG.save.data.millerHere) addSong('miller', 0, 'guy', 0xFF000000, 'unlocked');
+			if (everyFreeplaySongBeaten() || FlxG.save.data.millerHere) addSong('miller', 0, 'guy', 0xFF000000, 'locked');
 		#else
-		addSong('miller', 0, 'guy', 0xFF000000, 'unlocked');
+		addSong('miller', 0, 'guy', 0xFF000000, 'locked');
 		#end
 
 		WeekData.loadTheFirstEnabledMod();
@@ -178,7 +178,8 @@ class FreeplayState extends MusicBeatState
 			if (songs[i].lockstatus == 'unlocked' || songs[i].lockstatus == 'beaten') arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
 			else {
 			#if !debug
-				arcadeMachine.loadGraphic(Paths.image('machines/blank', 'preload'));
+				if (songs[i].songName != 'miller') arcadeMachine.loadGraphic(Paths.image('machines/blank', 'preload'));
+				else arcadeMachine.loadGraphic(Paths.image('machines/millerblank', 'preload'));
 			#else
 				arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
 			#end
