@@ -130,6 +130,15 @@ function onCreate()
 	setObjectCamera('hint', 'other')
 	setProperty('hint.y', getProperty('hint.y')+500)
 	addLuaSprite('hint', true)
+	
+	makeLuaSprite('THX','ty', 0, 0)
+	setProperty('THX.antialiasing', false)
+	scaleObject('THX', 0.49, 0.49)
+	updateHitbox('THX')
+	screenCenter('THX')
+	setObjectCamera('THX', 'other')
+	setProperty('THX.alpha', 0)
+	addLuaSprite('THX', true)
 end
 
 function onCreatePost()
@@ -410,5 +419,10 @@ function onUpdate(elapsed)
 			setProperty('flashbacks.scale.x', 1.4)
 			setProperty('flashbacks.scale.y', 1.4)
 		end
+	end
+	
+	if getProperty('THX.alpha') > 0 then
+		setProperty('THX.scale.x', getProperty('THX.scale.x') - 0.005 * elapsed)
+		setProperty('THX.scale.y', getProperty('THX.scale.y') - 0.005 * elapsed)
 	end
 end 
