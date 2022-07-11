@@ -3528,9 +3528,6 @@ class PlayState extends MusicBeatState
 					CustomFadeTransition.nextCamera = null;
 				}
 				MusicBeatState.switchState(new FreeplayState());
-				FreeplaySaves.saveShit();
-				changedDifficulty = false;
-
 				switch(SONG.song.toLowerCase()) {
 					case 'lurking':
 						FreeplaySaves.lurkingLock = 'beaten';
@@ -3565,7 +3562,8 @@ class PlayState extends MusicBeatState
 					case 'criminal':
 						FreeplaySaves.criminalLock = 'beaten';
 				}
-
+				FreeplaySaves.saveShit();
+				changedDifficulty = false;
 			}
 			transitioning = true;
 		}

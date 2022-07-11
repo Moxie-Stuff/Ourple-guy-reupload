@@ -175,7 +175,7 @@ class FreeplayState extends MusicBeatState
 			//grpSongs.add(songText);
 
 			var arcadeMachine:ArcadeMachine = new ArcadeMachine((100 * i) + 30, 200);
-			if (songs[i].lockstatus == 'unlocked') arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
+			if (songs[i].lockstatus == 'unlocked' || songs[i].lockstatus == 'beaten') arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
 			else {
 			#if !debug
 				arcadeMachine.loadGraphic(Paths.image('machines/blank', 'preload'));
@@ -189,7 +189,7 @@ class FreeplayState extends MusicBeatState
 			arcadeMachine.antialiasing = false;
 			arcadeMachine.cameras = [camBG];
 			
-	
+			trace(songs[i].lockstatus);
 
 			if (songText.width > 980)
 			{
@@ -361,27 +361,25 @@ class FreeplayState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
-		#if debug
 		if (FlxG.keys.justPressed.NINE) {
-			FreeplaySaves.lurkingLock = 'locked';
-			FreeplaySaves.loreLock = 'locked';
-			FreeplaySaves.blubberLock = 'locked';
-			FreeplaySaves.goldenLock = 'locked';
-			FreeplaySaves.performanceLock = 'locked';
-			FreeplaySaves.biteLock = 'locked';
-			FreeplaySaves.trappedLock = 'locked';
-			FreeplaySaves.gofishLock = 'locked';
-			FreeplaySaves.watchfulLock = 'locked';
-			FreeplaySaves.restlessLock = 'locked';
-			FreeplaySaves.beatboxLock = 'locked';
-			FreeplaySaves.showtimeLock = 'locked';
-			FreeplaySaves.manLock = 'locked';
-			FreeplaySaves.followedLock = 'locked';
-			FreeplaySaves.fazfuckLock = 'locked';
-			FreeplaySaves.criminalLock = 'locked';
+			FreeplaySaves.lurkingLock = 'beaten';
+			FreeplaySaves.loreLock = 'beaten';
+			FreeplaySaves.blubberLock = 'beaten';
+			FreeplaySaves.goldenLock = 'beaten';
+			FreeplaySaves.performanceLock = 'beaten';
+			FreeplaySaves.biteLock = 'beaten';
+			FreeplaySaves.trappedLock = 'beaten';
+			FreeplaySaves.gofishLock = 'beaten';
+			FreeplaySaves.watchfulLock = 'beaten';
+			FreeplaySaves.restlessLock = 'beaten';
+			FreeplaySaves.beatboxLock = 'beaten';
+			FreeplaySaves.showtimeLock = 'beaten';
+			FreeplaySaves.manLock = 'beaten';
+			FreeplaySaves.followedLock = 'beaten';
+			FreeplaySaves.fazfuckLock = 'beaten';
+			FreeplaySaves.criminalLock = 'beaten';
 			FreeplaySaves.saveShit();
 		}
-		#end
 
 		bg.x = FlxMath.lerp(bg.x, (FlxMath.remapToRange(bgTargetX, 0, 1, 0, 1.3)), CoolUtil.boundTo(elapsed * 9.6, 0, 1));
 
