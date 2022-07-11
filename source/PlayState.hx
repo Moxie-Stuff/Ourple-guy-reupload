@@ -304,7 +304,7 @@ class PlayState extends MusicBeatState
 			case 'midnight':
 				songComposer = 'kiwiquest';
 			case 'terminated':
-				songComposer = 'METR0GARD3N';
+				songComposer = 'findjuno';
 			case 'lurking':
 				songComposer = 'MewMarissa';
 				if (FlxG.save.data.lurkingLock != 'beaten') FreeplaySaves.lurkingLock = 'unlocked';
@@ -330,7 +330,7 @@ class PlayState extends MusicBeatState
 				songComposer = 'GalXE';
 				if (FlxG.save.data.gofishLock != 'beaten') FreeplaySaves.gofishLock = 'unlocked';
 			case 'watchful':
-				songComposer = 'METR0GARD3N';
+				songComposer = 'findjuno';
 				if (FlxG.save.data.watchfulLock != 'beaten') FreeplaySaves.watchfulLock = 'unlocked';
 			case 'restless':
 				songComposer = 'Xhitest';
@@ -345,7 +345,7 @@ class PlayState extends MusicBeatState
 				songComposer = 'justisaac';
 				if (FlxG.save.data.manLock != 'beaten') FreeplaySaves.manLock = 'unlocked';
 			case 'followed':
-				songComposer = 'METR0GARD3N';
+				songComposer = 'findjuno';
 				if (FlxG.save.data.followedLock != 'beaten') FreeplaySaves.followedLock = 'unlocked';
 			case 'fazfuck news':
 				songComposer = 'kiwiquest';
@@ -354,7 +354,7 @@ class PlayState extends MusicBeatState
 				songComposer = 'River';
 				if (FlxG.save.data.criminalLock != 'beaten') FreeplaySaves.criminalLock = 'unlocked';
 			case 'miller':
-				songComposer = '\nkiwiquest,\nheaddzo,\nMETR0GARD3N,\nPolyfield,\nGalxe';
+				songComposer = '\nkiwiquest,\nheaddzo,\nfindjuno,\nPolyfield,\nGalxe';
 				if (FlxG.save.data.millerLock != 'beaten') FreeplaySaves.millerLock = 'unlocked';
 		}
 
