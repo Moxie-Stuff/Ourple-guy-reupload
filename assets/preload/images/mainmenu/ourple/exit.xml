@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="exit.png"><SubTexture name="menu exit0000" x="0" y="0" width="142" height="69" frameX="0" frameY="0" frameWidth="142" frameHeight="69" />
+<SubTexture name="menu exit0001" x="142" y="0" width="142" height="69" frameX="0" frameY="0" frameWidth="142" frameHeight="69" />
+<SubTexture name="menu exit0002" x="0" y="69" width="142" height="69" frameX="0" frameY="0" frameWidth="142" frameHeight="69" />
+<SubTexture name="menu exitS0000" x="142" y="69" width="142" height="69" frameX="0" frameY="0" frameWidth="142" frameHeight="69" />
+<SubTexture name="menu exitS0001" x="0" y="138" width="142" height="69" frameX="0" frameY="0" frameWidth="142" frameHeight="69" />
+<SubTexture name="menu exitS0002" x="142" y="138" width="142" height="69" frameX="0" frameY="0" frameWidth="142" frameHeight="69" />
+</TextureAtlas>

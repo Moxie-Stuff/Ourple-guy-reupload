@@ -415,7 +415,7 @@ class PlayState extends MusicBeatState
 		// String that contains the mode defined here so it isn't necessary to call changePresence for each mode
 		if (isStoryMode)
 		{
-			detailsText = "Story Mode: " + WeekData.getCurrentWeek().weekName;
+			detailsText = "Story Mode: Week Ourple";
 		}
 		else
 		{
@@ -1622,6 +1622,7 @@ class PlayState extends MusicBeatState
 	var finishTimer:FlxTimer = null;
 
 	// For being able to mess with the sprites on Lua
+	public var countdownOnyourmarks:FlxSprite;
 	public var countdownReady:FlxSprite;
 	public var countdownSet:FlxSprite;
 	public var countdownGo:FlxSprite;
@@ -1703,6 +1704,24 @@ class PlayState extends MusicBeatState
 				switch (swagCounter)
 				{
 					case 0:
+						countdownOnyourmarks = new FlxSprite().loadGraphic(Paths.image('onyourmarks'));
+						countdownOnyourmarks.scrollFactor.set();
+						countdownOnyourmarks.updateHitbox();
+
+						if (PlayState.isPixelStage)
+							countdownOnyourmarks.setGraphicSize(Std.int(countdownOnyourmarks.width * daPixelZoom));
+
+						countdownOnyourmarks.screenCenter();
+						countdownOnyourmarks.antialiasing = false;
+						add(countdownOnyourmarks);
+						FlxTween.tween(countdownOnyourmarks, {/*y: countdownOnyourmarks.y + 100,*/ alpha: 0}, Conductor.crochet / 1000, {
+							ease: FlxEase.cubeInOut,
+							onComplete: function(twn:FlxTween)
+							{
+								remove(countdownOnyourmarks);
+								countdownOnyourmarks.destroy();
+							}
+						});
 						FlxG.sound.play(Paths.sound('intro3' + introSoundsSuffix), 0.6);
 					case 1:
 						countdownReady = new FlxSprite().loadGraphic(Paths.image(introAlts[0]));
@@ -1713,7 +1732,7 @@ class PlayState extends MusicBeatState
 							countdownReady.setGraphicSize(Std.int(countdownReady.width * daPixelZoom));
 
 						countdownReady.screenCenter();
-						countdownReady.antialiasing = antialias;
+						countdownReady.antialiasing = false;
 						add(countdownReady);
 						FlxTween.tween(countdownReady, {/*y: countdownReady.y + 100,*/ alpha: 0}, Conductor.crochet / 1000, {
 							ease: FlxEase.cubeInOut,
@@ -1732,7 +1751,7 @@ class PlayState extends MusicBeatState
 							countdownSet.setGraphicSize(Std.int(countdownSet.width * daPixelZoom));
 
 						countdownSet.screenCenter();
-						countdownSet.antialiasing = antialias;
+						countdownSet.antialiasing = false;
 						add(countdownSet);
 						FlxTween.tween(countdownSet, {/*y: countdownSet.y + 100,*/ alpha: 0}, Conductor.crochet / 1000, {
 							ease: FlxEase.cubeInOut,
@@ -1753,7 +1772,7 @@ class PlayState extends MusicBeatState
 						countdownGo.updateHitbox();
 
 						countdownGo.screenCenter();
-						countdownGo.antialiasing = antialias;
+						countdownGo.antialiasing = false;
 						add(countdownGo);
 						FlxTween.tween(countdownGo, {/*y: countdownGo.y + 100,*/ alpha: 0}, Conductor.crochet / 1000, {
 							ease: FlxEase.cubeInOut,
@@ -3427,7 +3446,7 @@ class PlayState extends MusicBeatState
 					if(FlxTransitionableState.skipNextTransIn) {
 						CustomFadeTransition.nextCamera = null;
 					}
-					MusicBeatState.switchState(new StoryMenuState());
+					MusicBeatState.switchState(new MainMenuState());
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice', false) && !ClientPrefs.getGameplaySetting('botplay', false)) {

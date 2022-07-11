@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="story.png"><SubTexture name="menu story0000" x="0" y="0" width="238" height="94" frameX="0" frameY="0" frameWidth="238" frameHeight="94" />
+<SubTexture name="menu story0001" x="238" y="0" width="238" height="94" frameX="0" frameY="0" frameWidth="238" frameHeight="94" />
+<SubTexture name="menu story0002" x="0" y="94" width="238" height="94" frameX="0" frameY="0" frameWidth="238" frameHeight="94" />
+<SubTexture name="menu storyS0000" x="238" y="94" width="238" height="94" frameX="0" frameY="0" frameWidth="238" frameHeight="94" />
+<SubTexture name="menu storyS0001" x="0" y="188" width="238" height="94" frameX="0" frameY="0" frameWidth="238" frameHeight="94" />
+<SubTexture name="menu storyS0002" x="238" y="188" width="238" height="94" frameX="0" frameY="0" frameWidth="238" frameHeight="94" />
+</TextureAtlas>
