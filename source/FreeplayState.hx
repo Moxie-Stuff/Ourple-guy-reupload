@@ -361,26 +361,6 @@ class FreeplayState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
-		if (FlxG.keys.justPressed.NINE) {
-			FreeplaySaves.lurkingLock = 'beaten';
-			FreeplaySaves.loreLock = 'beaten';
-			FreeplaySaves.blubberLock = 'beaten';
-			FreeplaySaves.goldenLock = 'beaten';
-			FreeplaySaves.performanceLock = 'beaten';
-			FreeplaySaves.biteLock = 'beaten';
-			FreeplaySaves.trappedLock = 'beaten';
-			FreeplaySaves.gofishLock = 'beaten';
-			FreeplaySaves.watchfulLock = 'beaten';
-			FreeplaySaves.restlessLock = 'beaten';
-			FreeplaySaves.beatboxLock = 'beaten';
-			FreeplaySaves.showtimeLock = 'beaten';
-			FreeplaySaves.manLock = 'beaten';
-			FreeplaySaves.followedLock = 'beaten';
-			FreeplaySaves.fazfuckLock = 'beaten';
-			FreeplaySaves.criminalLock = 'beaten';
-			FreeplaySaves.saveShit();
-		}
-
 		bg.x = FlxMath.lerp(bg.x, (FlxMath.remapToRange(bgTargetX, 0, 1, 0, 1.3)), CoolUtil.boundTo(elapsed * 9.6, 0, 1));
 
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, CoolUtil.boundTo(elapsed * 24, 0, 1)));

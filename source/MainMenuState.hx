@@ -57,6 +57,8 @@ class MainMenuState extends MusicBeatState
 	override function create()
 	{
 		WeekData.loadTheFirstEnabledMod();
+		FirstTimeFreeplay.loadShit();
+		trace(FlxG.save.data.firstTimeFreeplay);
 
 		#if desktop
 		// Updating Discord Rich Presence
@@ -287,17 +289,13 @@ class MainMenuState extends MusicBeatState
 										PlayState.storyPlaylist = ['guy', 'midnight', 'terminated'];
 										PlayState.isStoryMode = true;
 
-										var diffic = '-hard';
-
-										PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+										PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + '-hard', PlayState.storyPlaylist[0].toLowerCase());
 										PlayState.campaignScore = 0;
 										PlayState.campaignMisses = 0;
 										LoadingState.loadAndSwitchState(new PlayState(), true);
 										FreeplayState.destroyFreeplayVocals();
 									case 'freeplay':
-										FirstTimeFreeplay.loadShit();
-										FirstTimeFreeplay.saveShit();
-										if (FirstTimeFreeplay.firstTimeFreeplay) MusicBeatState.switchState(new FreeplayWelcomeState());
+										if (FlxG.save.data.firstTimeFreeplay) MusicBeatState.switchState(new FreeplayWelcomeState());
 										else MusicBeatState.switchState(new FreeplayState());
 										FlxG.sound.music.fadeOut(1);
 									#if MODS_ALLOWED

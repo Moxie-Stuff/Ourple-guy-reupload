@@ -22,6 +22,7 @@ class FreeplayWelcomeState extends MusicBeatState
 		super.create();
 
 		bg = new FlxSprite().loadGraphic(Paths.image('freeplaywelcome', 'preload'));
+        bg.screenCenter();
 		add(bg);
 	}
 
