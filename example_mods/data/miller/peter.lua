@@ -1,7 +1,6 @@
 -- Script by Shadow Mario
 -- Customized for Simplicity by Kevin Kuntz
 function onCreate()
-	makeAnimationList();
 	makeOffsets();
 	
 	makeAnimatedLuaSprite('peter', 'characters/peterk', 4921.25, 5183.3);
@@ -25,22 +24,8 @@ function onCreate()
 
 	playAnimation('peter', 'idle', true);
 end
-
-animationsList = {}
 holdTimers = {peter = 15.0};
 singAnimations = {'singLEFT', 'singDOWN', 'singUP', 'singRIGHT'};
-function makeAnimationList()
-	animationsList['idle'] = 'idle';
-	animationsList['singLEFT'] = 'singLEFT';
-	animationsList['singDOWN'] = 'singDOWN';
-	animationsList['singUP'] = 'singUP';
-	animationsList['singRIGHT'] = 'singRIGHT';
-	animationsList['singLEFTmiss'] = 'singLEFTmiss';
-	animationsList['singDOWNmiss'] = 'singDOWNmiss';
-	animationsList['singUPmiss'] = 'singUPmiss';
-	animationsList['singRIGHTmiss'] = 'singRIGHTmiss';
-	animationsList['die'] = 'die';
-end
 
 offsetspeter = {};
 function makeOffsets()

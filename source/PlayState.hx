@@ -4555,12 +4555,12 @@ class PlayState extends MusicBeatState
 			dad.dance();
 		}
 
-		if (SONG.song.toLowerCase() != 'miller' ? curBeat == 1 : curBeat == 248) {
+		if (SONG.song.toLowerCase() != 'miller' ? curBeat == 1 : curBeat == 122) {
 			FlxTween.tween(songSign, {x: 40}, 1, {ease: FlxEase.quadOut});
 			FlxTween.tween(songSignTxt, {x: 50}, 1, {ease: FlxEase.quadOut});
 		}
 
-		if (SONG.song.toLowerCase() != 'miller' ? curBeat == 8 : curBeat == 256) { 
+		if (SONG.song.toLowerCase() != 'miller' ? curBeat == 8 : curBeat == 134) { 
 			FlxTween.tween(songSign, {x: -400}, 1.5, {ease: FlxEase.quadIn});
 			FlxTween.tween(songSignTxt, {x: -390}, 1.5, {ease: FlxEase.quadIn});
 		}
