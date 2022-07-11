@@ -134,6 +134,15 @@ function onCreate()
 	setProperty('millerint.antialiasing', false)
 	setProperty('millerint.visible', false)
 	addLuaSprite('millerint', true)
+	
+	makeLuaSprite('hint','spite/hint', 0, 0)
+	setProperty('hint.antialiasing', false)
+	scaleObject('hint', 1.5, 1.5)
+	updateHitbox('hint')
+	screenCenter('hint')
+	setObjectCamera('hint', 'other')
+	setProperty('hint.y', getProperty('hint.y')+500)
+	addLuaSprite('hint', true)
 end
 
 function onCreatePost()
@@ -208,6 +217,10 @@ function onTweenCompleted(tag)
 			removeLuaSprite('healFX'..i)
 		end
 	end
+	
+	if tag == 'raiseHint2' then
+		removeLuaSprite('hint')
+	end
 end
 
 function onEvent(n,v1,v2)
@@ -246,7 +259,7 @@ function onEvent(n,v1,v2)
 						ofsX = 570
 					end
 					makeAnimatedLuaSprite(sprName, 'heal', getMidpointX(object)-ofsX, getMidpointY(object)-ofsY)
-					addAnimationByPrefix(sprName, 'hit', 'heal', 30, false)
+					addAnimationByPrefix(sprName, 'hit', 'heal', 33, false)
 					objectPlayAnimation(sprName, 'hit', true)
 					scaleObject(sprName, 5, 5)
 					updateHitbox(sprName)
@@ -285,7 +298,18 @@ function onEvent(n,v1,v2)
 		removeLuaSprite('black')
 		setProperty('camHUD.visible', true)
 	end
+	
+	if n == 'Alter Visibility' and v1 == 'hint' and v2 == 'true' then
+		doTweenY('raiseHint', 'hint', getProperty('hint.y')-500, 0.75, 'cubeOut')
+		runTimer('flyHint', 2.5)
+	end
 
+end
+
+function onTimerCompleted(tag, loops, loopsLeft)
+	if tag == 'flyHint' then
+		doTweenY('raiseHint2', 'hint', getProperty('hint.y')-500, 0.75, 'cubeIn')
+	end
 end
 
 function goodNoteHit(id, noteData, noteType, isSustainNote)
