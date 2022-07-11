@@ -203,7 +203,7 @@ class MainMenuState extends MusicBeatState
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				FlxG.sound.music.fadeOut(1);
-				MusicBeatState.switchState(new MainMenuState());
+				MusicBeatState.switchState(new TitleState());
 				FlxG.sound.playMusic(Paths.music('TitleScreen'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.7);
 			}
