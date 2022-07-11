@@ -129,7 +129,7 @@ class FreeplayState extends MusicBeatState
 		addSong('fazfuck news', 0, 'guy', 0xFF000000, FlxG.save.data.fazfuckLock);
 		addSong('criminal', 0, 'guy', 0xFF000000, FlxG.save.data.criminalLock);
 		#if !debug 
-			if (everyFreeplaySongBeaten()) addSong('miller', 0, 'guy', 0xFF000000, 'unlocked');
+			if (everyFreeplaySongBeaten() || FlxG.save.data.millerHere) addSong('miller', 0, 'guy', 0xFF000000, 'unlocked');
 		#else
 		addSong('miller', 0, 'guy', 0xFF000000, 'unlocked');
 		#end
@@ -501,7 +501,7 @@ class FreeplayState extends MusicBeatState
 			if(colorTween != null) {
 				colorTween.cancel();
 			}
-			
+
 				LoadingState.loadAndSwitchState(new PlayState());
 
 			FlxG.sound.music.volume = 0;

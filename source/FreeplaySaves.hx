@@ -107,6 +107,7 @@ class FreeplaySaves
         followedLock = FlxG.save.data.followedLock;
         fazfuckLock = FlxG.save.data.fazfuckLock;
         criminalLock = FlxG.save.data.criminalLock;
+        if (lurkingLock == 'beaten' && loreLock == 'beaten' && blubberLock == 'beaten' && goldenLock == 'beaten' && performanceLock == 'beaten' && trappedLock == 'beaten' && biteLock == 'beaten' && gofishLock == 'beaten' && watchfulLock == 'beaten' && restlessLock == 'beaten' && beatboxLock == 'beaten' && showtimeLock == 'beaten' && manLock == 'beaten' && followedLock == 'beaten' && fazfuckLock == 'beaten' && criminalLock == 'beaten') FlxG.save.data.millerHere = true;
         FlxG.save.flush();
     }
 }
