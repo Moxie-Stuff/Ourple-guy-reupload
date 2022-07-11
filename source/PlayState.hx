@@ -354,8 +354,8 @@ class PlayState extends MusicBeatState
 				songComposer = 'River';
 				if (FlxG.save.data.criminalLock != 'beaten') FreeplaySaves.criminalLock = 'unlocked';
 			case 'miller':
-				songComposer = '\nby kiwiquest.\nheaddzo.\nMETR0GARD3N.\nPolyfield.\nGalxe.';
-				if (FlxG.save.data.millerLock != 'beaten') FlxG.save.data.millerLock = 'unlocked';
+				songComposer = '\nkiwiquest,\nheaddzo,\nMETR0GARD3N,\nPolyfield,\nGalxe';
+				if (FlxG.save.data.millerLock != 'beaten') FreeplaySaves.millerLock = 'unlocked';
 		}
 
 		FreeplaySaves.saveShit();
@@ -3586,6 +3586,8 @@ class PlayState extends MusicBeatState
 						FreeplaySaves.fazfuckLock = 'beaten';
 					case 'criminal':
 						FreeplaySaves.criminalLock = 'beaten';
+					case 'miller':
+						FreeplaySaves.millerLock = 'beaten';
 				}
 				FreeplaySaves.saveShit();
 				changedDifficulty = false;

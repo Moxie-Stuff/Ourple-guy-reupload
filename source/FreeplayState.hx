@@ -179,7 +179,7 @@ class FreeplayState extends MusicBeatState
 			else {
 			#if !debug
 				if (songs[i].songName != 'miller') arcadeMachine.loadGraphic(Paths.image('machines/blank', 'preload'));
-				else arcadeMachine.loadGraphic(Paths.image('machines/millerblank', 'preload'));
+				else arcadeMachine.loadGraphic(Paths.image('machines/bl_miller', 'preload'));
 			#else
 				arcadeMachine.loadGraphic(Paths.image('machines/' + songs[i].songName.toLowerCase(), 'preload'));
 			#end
