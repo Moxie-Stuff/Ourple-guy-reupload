@@ -50,6 +50,26 @@ class FreeplaySaves
     public static var fazfuckLock:String = 'locked';
     public static var criminalLock:String = 'locked';
 
+    public static function fuckinSet() {
+        if (FlxG.save.data.lurkingLock == null) FlxG.save.data.lurkingLock = 'locked';
+        if (FlxG.save.data.loreLock == null) FlxG.save.data.loreLock = 'locked';
+        if (FlxG.save.data.blubberLock == null) FlxG.save.data.blubberLock = 'locked';
+        if (FlxG.save.data.goldenLock == null) FlxG.save.data.goldenLock = 'locked';
+        if (FlxG.save.data.performanceLock == null) FlxG.save.data.performanceLock = 'locked';
+        if (FlxG.save.data.biteLock == null) FlxG.save.data.biteLock = 'locked';
+        if (FlxG.save.data.trappedLock == null) FlxG.save.data.trappedLock = 'locked';
+        if (FlxG.save.data.gofishLock == null) FlxG.save.data.gofishLock = 'locked';
+        if (FlxG.save.data.watchfulLock == null) FlxG.save.data.watchfulLock = 'locked';
+        if (FlxG.save.data.restlessLock == null) FlxG.save.data.restlessLock = 'locked';
+        if (FlxG.save.data.beatboxLock == null) FlxG.save.data.beatboxLock = 'locked';
+        if (FlxG.save.data.showtimeLock == null) FlxG.save.data.showtimeLock = 'locked';
+        if (FlxG.save.data.manLock == null) FlxG.save.data.manLock = 'locked';
+        if (FlxG.save.data.followedLock == null) FlxG.save.data.followedLock = 'locked';
+        if (FlxG.save.data.fazfuckLock == null) FlxG.save.data.fazfuckLock = 'locked';
+        if (FlxG.save.data.criminalLock == null) FlxG.save.data.criminalLock = 'locked';
+        FlxG.save.flush();
+    }
+
     public static function saveShit() {
         FlxG.save.data.lurkingLock = lurkingLock;
         FlxG.save.data.loreLock = loreLock;
