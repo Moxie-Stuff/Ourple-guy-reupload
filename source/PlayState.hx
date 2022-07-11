@@ -1168,7 +1168,7 @@ class PlayState extends MusicBeatState
 			botplayTxt.y = timeBarBG.y - 78;
 		}
 
-		millerSubtitles = new FlxText(0, FlxG.height * 0.85, FlxG.width, '', 36);
+		millerSubtitles = new FlxText(0, FlxG.height * 0.75, FlxG.width, '', 36);
 		millerSubtitles.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.PURPLE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		millerSubtitles.scrollFactor.set();
 		millerSubtitles.borderSize = 2;
@@ -4569,35 +4569,35 @@ class PlayState extends MusicBeatState
 			{
 				if (curBeat == 382) {
 					millerSubtitles.text = 'Meaningless.';
-					FlxTween.tween(millerSubtitles, {alpha: 1}, 1, {ease: FlxEase.quadOut});
+					FlxTween.tween(millerSubtitles, {alpha: 1}, 0.25, {ease: FlxEase.quadOut});
 				}
 
 				if (curBeat == 442) {
 					millerSubtitles.text = 'Orphan.';
-					FlxTween.tween(millerSubtitles, {alpha: 1}, 1, {ease: FlxEase.quadOut});
+					FlxTween.tween(millerSubtitles, {alpha: 1}, 0.25, {ease: FlxEase.quadOut});
 				}
 
 				if (curBeat == 613) {
 					millerSubtitles.text = 'False savior.';
-					FlxTween.tween(millerSubtitles, {alpha: 1}, 1, {ease: FlxEase.quadOut});
+					FlxTween.tween(millerSubtitles, {alpha: 1}, 0.25, {ease: FlxEase.quadOut});
 				}
 
 				if (curBeat == 738) {
 					millerSubtitles.text = 'God damn coward.';
-					FlxTween.tween(millerSubtitles, {alpha: 1}, 1, {ease: FlxEase.quadOut});
+					FlxTween.tween(millerSubtitles, {alpha: 1}, 0.25, {ease: FlxEase.quadOut});
 				}
 
 				if (curBeat == 936) {
 					millerSubtitles.text = 'You are just as bad as me.';
-					FlxTween.tween(millerSubtitles, {alpha: 1}, 1, {ease: FlxEase.quadOut});
+					FlxTween.tween(millerSubtitles, {alpha: 1}, 0.25, {ease: FlxEase.quadOut});
 				}
 
 				if (curBeat == 1004) {
 					millerSubtitles.text = 'You are a cancer.';
-					FlxTween.tween(millerSubtitles, {alpha: 1}, 0.7, {ease: FlxEase.quadOut});
+					FlxTween.tween(millerSubtitles, {alpha: 1}, 0.25, {ease: FlxEase.quadOut});
 				}
 
-				if (curBeat == 384 || curBeat == 444 || curBeat == 616 || curBeat == 744 || curBeat == 943 || curBeat == 1008) FlxTween.tween(millerSubtitles, {alpha: 0}, 0.7, {ease: FlxEase.quadIn});
+				if (curBeat == 384 || curBeat == 444 || curBeat == 616 || curBeat == 744 || curBeat == 943 || curBeat == 1008) FlxTween.tween(millerSubtitles, {alpha: 0}, 0.45, {ease: FlxEase.quadIn});
 			}
 
 		switch (curStage)
