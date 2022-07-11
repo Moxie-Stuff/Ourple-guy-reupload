@@ -31,6 +31,11 @@ class FirstTimeFreeplay
 
     public static var firstTimeFreeplay:Bool = true;
 
+    public static function fuckinSet() {
+        if (FlxG.save.data.firstTimeFreeplay == null) FlxG.save.data.firstTimeFreeplay = true;
+        FlxG.save.flush();
+    }
+
     public static function saveShit() {
 		FlxG.save.data.firstTimeFreeplay = firstTimeFreeplay;
         FlxG.save.flush();

@@ -60,6 +60,9 @@ class MainMenuState extends MusicBeatState
 		FirstTimeFreeplay.loadShit();
 		trace(FlxG.save.data.firstTimeFreeplay);
 
+		FreeplaySaves.fuckinSet();
+		FirstTimeFreeplay.fuckinSet();
+
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
