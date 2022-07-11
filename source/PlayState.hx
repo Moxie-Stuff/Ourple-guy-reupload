@@ -307,55 +307,55 @@ class PlayState extends MusicBeatState
 				songComposer = 'METR0GARD3N';
 			case 'lurking':
 				songComposer = 'MewMarissa';
-				FreeplaySaves.lurkingLock = 'unlocked';
+				if (FlxG.save.data.lurkingLock != 'beaten') FreeplaySaves.lurkingLock = 'unlocked';
 			case 'lore':
 				songComposer = 'kiwiquest';
-				FreeplaySaves.loreLock = 'unlocked';
+				if (FlxG.save.data.loreLock != 'beaten') FreeplaySaves.loreLock = 'unlocked';
 			case 'blubber':
 				songComposer = 'kiwiquest';
-				FreeplaySaves.blubberLock = 'unlocked';
+				if (FlxG.save.data.blubberLock != 'beaten') FreeplaySaves.blubberLock = 'unlocked';
 			case 'golden':
 				songComposer = 'Zeroh';
-				FreeplaySaves.goldenLock = 'unlocked';
+				if (FlxG.save.data.goldenLock != 'beaten') FreeplaySaves.goldenLock = 'unlocked';
 			case 'performance':
 				songComposer = 'MewMarissa';
-				FreeplaySaves.performanceLock = 'unlocked';
+				if (FlxG.save.data.performanceLock != 'beaten') FreeplaySaves.performanceLock = 'unlocked';
 			case 'trapped':
 				songComposer = 'headdzo';
-				FreeplaySaves.trappedLock = 'unlocked';
+				if (FlxG.save.data.trappedLock != 'beaten') FreeplaySaves.trappedLock = 'unlocked';
 			case 'bite':
 				songComposer = 'kiwiquest';
-				FreeplaySaves.biteLock = 'unlocked';
+				if (FlxG.save.data.biteLock != 'beaten') FreeplaySaves.biteLock = 'unlocked';
 			case 'go fish':
 				songComposer = 'GalXE';
-				FreeplaySaves.gofishLock = 'unlocked';
+				if (FlxG.save.data.gofishLock != 'beaten') FreeplaySaves.gofishLock = 'unlocked';
 			case 'watchful':
 				songComposer = 'METR0GARD3N';
-				FreeplaySaves.watchfulLock = 'unlocked';
+				if (FlxG.save.data.watchfulLock != 'beaten') FreeplaySaves.watchfulLock = 'unlocked';
 			case 'restless':
 				songComposer = 'Xhitest';
-				FreeplaySaves.restlessLock = 'unlocked';
+				if (FlxG.save.data.restlessLock != 'beaten') FreeplaySaves.restlessLock = 'unlocked';
 			case 'beatbox':
 				songComposer = 'Kiwiquest';
-				FreeplaySaves.beatboxLock = 'unlocked';
+				if (FlxG.save.data.beatboxLock != 'beaten') FreeplaySaves.beatboxLock = 'unlocked';
 			case 'showtime':
 				songComposer = 'Polyfield';
-				FreeplaySaves.showtimeLock = 'unlocked';
+				if (FlxG.save.data.showtimeLock != 'beaten') FreeplaySaves.showtimeLock = 'unlocked';
 			case 'man':
 				songComposer = 'justisaac';
-				FreeplaySaves.manLock = 'unlocked';
+				if (FlxG.save.data.manLock != 'beaten') FreeplaySaves.manLock = 'unlocked';
 			case 'followed':
 				songComposer = 'METR0GARD3N';
-				FreeplaySaves.followedLock = 'unlocked';
+				if (FlxG.save.data.followedLock != 'beaten') FreeplaySaves.followedLock = 'unlocked';
 			case 'fazfuck news':
 				songComposer = 'kiwiquest';
-				FreeplaySaves.fazfuckLock = 'unlocked';
+				if (FlxG.save.data.fazfuckLock != 'beaten') FreeplaySaves.fazfuckLock = 'unlocked';
 			case 'criminal':
 				songComposer = 'River';
-				FreeplaySaves.criminalLock = 'unlocked';
+				if (FlxG.save.data.criminalLock != 'beaten') FreeplaySaves.criminalLock = 'unlocked';
 			case 'miller':
 				songComposer = '\nby kiwiquest.\nheaddzo.\nMETR0GARD3N.\nPolyfield.\nGalxe.';
-				FlxG.save.data.millerLock = 'unlocked';
+				if (FlxG.save.data.millerLock != 'beaten') FlxG.save.data.millerLock = 'unlocked';
 		}
 
 		FreeplaySaves.saveShit();
