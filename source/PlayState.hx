@@ -245,6 +245,8 @@ class PlayState extends MusicBeatState
 	public static var seenCutscene:Bool = false;
 	public static var deathCounter:Int = 0;
 
+	var millerSubtitles:FlxText;
+
 	public var defaultCamZoom:Float = 1.05;
 
 	// how big to stretch the pixel art assets
@@ -1166,6 +1168,16 @@ class PlayState extends MusicBeatState
 			botplayTxt.y = timeBarBG.y - 78;
 		}
 
+		millerSubtitles = new FlxText(0, FlxG.height * 0.85, FlxG.width, '', 36);
+		millerSubtitles.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.PURPLE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		millerSubtitles.scrollFactor.set();
+		millerSubtitles.borderSize = 2;
+		millerSubtitles.alpha = 0;
+		millerSubtitles.screenCenter(X);
+		millerSubtitles.active = false;
+		millerSubtitles.antialiasing = false;
+		add(millerSubtitles);
+
 		strumLineNotes.cameras = [camHUD];
 		grpNoteSplashes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -1181,6 +1193,7 @@ class PlayState extends MusicBeatState
 		doof.cameras = [camHUD];
 		songSign.cameras = [camHUD];
 		songSignTxt.cameras = [camHUD];
+		millerSubtitles.cameras = [camHUD];
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -4547,6 +4560,23 @@ class PlayState extends MusicBeatState
 			FlxTween.tween(songSign, {x: -400}, 1.5, {ease: FlxEase.quadIn});
 			FlxTween.tween(songSignTxt, {x: -390}, 1.5, {ease: FlxEase.quadIn});
 		}
+
+		if (SONG.song.toLowerCase() == 'miller')
+			{
+				if (curBeat == 936) {
+					millerSubtitles.text = 'You are just as bad as me.';
+					FlxTween.tween(millerSubtitles, {alpha: 1}, 1, {ease: FlxEase.quadOut});
+				}
+
+				if (curBeat == 943) FlxTween.tween(millerSubtitles, {alpha: 0}, 1, {ease: FlxEase.quadIn});
+
+				if (curBeat == 1004) {
+					millerSubtitles.text = 'You are a cancer.';
+					FlxTween.tween(millerSubtitles, {alpha: 1}, 0.7, {ease: FlxEase.quadOut});
+				}
+
+				if (curBeat == 1008) FlxTween.tween(millerSubtitles, {alpha: 0}, 0.7, {ease: FlxEase.quadIn});
+			}
 
 		switch (curStage)
 		{
