@@ -27,6 +27,20 @@ function onCreate()
 	makeLuaSprite('void','flesh', 605, 3881)
 	addLuaSprite('void', false)
 	
+	--[[makeAnimatedLuaSprite('steven', 'bounces', 4395.4, 4977.65);
+	addAnimationByPrefix('steven', 'dance', 'steven dance', 30, false);
+	addAnimationByPrefix('steven', 'die', 'steven dead', 30, true);
+	objectPlayAnimation('steven', 'dance', true);
+	
+	addLuaSprite('steven', true)
+	
+	makeAnimatedLuaSprite('peter', 'bounces', 4721.25, 5133.3);
+	addAnimationByPrefix('peter', 'dance', 'peter idle', 30, false);
+	addAnimationByPrefix('peter', 'die', 'peter dead', 30, true);
+	objectPlayAnimation('peter', 'dance', true);
+	
+	addLuaSprite('peter', true)--]]
+	
 	makeAnimatedLuaSprite('blackjack', 'bounces', 4842.55, 4842.55);
 	bjDefY = getProperty('blackjack.y')
 	addAnimationByPrefix('blackjack', 'dance', 'blackjack idle', 30, false);
@@ -301,7 +315,7 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 	end
 end
 
-function finalHit(ind)
+function finalHit(index)
 	cancelTween('Fall')
 	cancelTween('FallX')
 	cancelTween('Bounce')
@@ -309,9 +323,9 @@ function finalHit(ind)
 	setProperty('WEAKENED.y', (getPropertyFromClass('flixel.FlxG', 'height') * 0.75))
 	setProperty('WEAKENED.x', (getPropertyFromClass('flixel.FlxG', 'width') * 0.39))
 	setProperty('WEAKENED.alpha', 1)
-	doTweenY('Bounce', 'WEAKENED', getProperty('WEAKENED.y') - 30, 1, 'sineOut')
+	doTweenY('Bounce', 'WEAKENED', getProperty('WEAKENED.y') - 20, 1, 'sineOut')
 	doTweenX('BounceX', 'WEAKENED', getProperty('WEAKENED.x') + 30, 1, 'sineOut')
-	spitealive[ind] = false
+	spitealive[index] = false
 	counter = counter - 1
 end
 
