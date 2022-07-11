@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mang.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="mang10000" x="6" y="6" width="327" height="637"/>
+	<SubTexture name="mdown0000" x="339" y="6" width="446" height="431"/>
+	<SubTexture name="mleft0000" x="791" y="6" width="394" height="600"/>
+	<SubTexture name="mright0000" x="1191" y="6" width="521" height="637"/>
+	<SubTexture name="mup0000" x="6" y="649" width="574" height="669"/>
+</TextureAtlas>

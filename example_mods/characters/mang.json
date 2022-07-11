@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "mang",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				190,
+				-46
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "mleft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				80,
+				-203
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "mdown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				71,
+				-19
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "mright",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				120,
+				31
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "mup",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/mang",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "ma",
+	"flip_x": false,
+	"healthbar_colors": [
+		237,
+		143,
+		186
+	],
+	"camera_position": [
+		-310,
+		70
+	],
+	"sing_duration": 5.7,
+	"scale": 1
+}

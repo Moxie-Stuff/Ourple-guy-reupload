@@ -19,7 +19,7 @@ function onBeatHit()
 end
 
 function opponentNoteHit(id, direction, noteType, isSustainNote)
-	if noteType == '' then
+	if not getPropertyFromGroup('notes', id, 'gfNote') then
 	cancelTween('raise')
 	setProperty('dad.y', defaultY)
 	setProperty('dad.flipX', false)

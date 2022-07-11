@@ -24,7 +24,6 @@ JonSpeedArts::jon::Artist, Drew the background for GOLDEN::https://twitter.com/J
 Rotty::rotty::Charter::https://twitter.com/RottySC2::0xFFEFECF5
 Snoob::small::Artist, Drew all the assets in man (besides the background)::https://twitter.com/smallnoob11::0xFFF2F46F 
 ItsMeBlueberry::blueberry::Made the Ourple Teaser trailer::https://www.youtube.com/channel/UCE3d3BOKE2b7fEIiDEiRcww::0xFF7FF5FA 
-Clowfoe::clowfoe::Coder, Worked on the menu (he is also clowfoe..)::https://twitter.com/Clowfoe::0xFFF1659A 
 Gibz::gibz::Charter::https://twitter.com/9766Gibz::0xFFF1E065
 Scott Cawthon::scott::Made the FNAF Series, without it, this mod wouldn't even exist.. #ThankYouScott::https://twitter.com/real_scawthon::0xFF7FF5FA 
 You!! <3::you::You!! Thank you so much for playing the mod! I hope you enjoyed, We put hard work into this mod, so i hope you did!::https://cdn.discordapp.com/attachments/866814739941425152/991893969137049600/FWXIGtLXEAI_I3z.jpg::0xFFFFFFFF

@@ -18,9 +18,10 @@ function onCreate()
 	setProperty('room.antialiasing', false)
 	addLuaSprite('room',false)
  
-    makeLuaSprite('room2','bg/ngt/ngforeground', -600, 300)
+    makeLuaSprite('room2','bg/ngt/ngforeground', -600, -100)
 	updateHitbox('room2')
 	setProperty('room2.antialiasing', false)
+	setScrollFactor('room2', 1.2, 1.2)
 	addLuaSprite('room2',true)
 	close(true)
 end 

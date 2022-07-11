@@ -2822,6 +2822,12 @@ class PlayState extends MusicBeatState
 				for (timer in modchartTimers) {
 					timer.active = true;
 				}
+				if (SONG.song.toLowerCase() == 'fazfuck news' || SONG.song.toLowerCase() == 'followed')
+				{
+					cancelMusicFadeTween();
+					LoadingState.loadAndSwitchState(new PlayState());
+					return true;
+				}
 				if (GameOverSubstate.jumpscare)
 					openSubState(new GameOverSubstate(dad.getScreenPosition().x - dad.positionArray[0], dad.getScreenPosition().y - dad.positionArray[1], camFollowPos.x, camFollowPos.y));
 				else

@@ -19,6 +19,8 @@ function onCreate()
 	precacheImage('flashbacks')
 	precacheImage('millerint')
 	setProperty('camZooming', true)
+	setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'horn')
+	
 	setObjectOrder('dadGroup', getObjectOrder('dadGroup') + 2)
 	setObjectOrder('gfGroup', getObjectOrder('gfGroup') + 2)
 	
@@ -139,6 +141,22 @@ function onCreatePost()
 	setProperty('henrylip.x', getProperty('dad.x')-400)
 	setProperty('henrylip.y', getProperty('dad.y')-130)
 end
+
+function onGameOverStart()
+	setPropertyFromClass('flixel.FlxG', 'camera.x', 0)
+	setPropertyFromClass('flixel.FlxG', 'camera.y', 0)
+	setProperty('boyfriend.visible', false)
+	
+	makeLuaSprite('usuck','usuck', 0, 0)
+	setProperty('usuck.antialiasing', false)
+	setScrollFactor('usuck', 0, 0)
+	scaleObject('usuck', 5, 5)
+	updateHitbox('usuck')
+	screenCenter('usuck')
+	addLuaSprite('usuck', true)
+	return Function_Continue;
+end
+
 function opponentNoteHit(id, direction, noteType, isSustainNote)
 	if getProperty('health') > 0.2 then
 		if counter > 0 then
@@ -274,7 +292,7 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 	if noteType == 'Spite Note' then
 		local index = noteData+1
 		
-		spitehp[index] = spitehp[index] - 7
+		spitehp[index] = spitehp[index] - 8
 
 		if spitealive[index] == true and spitehp[index] < 1 then
 			finalHit(index)
@@ -294,25 +312,6 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 			end
 		end
 		playSound('dmg-spite', 0.15)
-		local charPick = math.random(1,5)
-		local charName = listAttacking[charPick] 
-		local animName = getProperty(charName..'.animation.name')
-		repeat
-			charPick = math.random(1,5) 
-			charName = listAttacking[charPick] 
-			animName = getProperty(charName..'.animation.name')
-		until animName == 'idle' or string.sub(getProperty(animName),1,5) == 'dance'
-		if animName == 'idle' or string.sub(getProperty(animName),1,5) == 'dance' then
-			playHitAnim(charName)
-		end
-	end
-end
-
-function playHitAnim(name)
-	if name == 'dee' or name == 'peter' or name == 'steven' then 
-		--triggerEvent('Object Play Animation', name, 'singLEFT')
-	else
-		--characterPlayAnim(name, 'singLEFT', true)
 	end
 end
 
