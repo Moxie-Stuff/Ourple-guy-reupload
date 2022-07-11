@@ -13,6 +13,7 @@ bannedAnims = {'singUP', 'singDOWN', 'singLEFT', 'singRIGHT', 'die', 'idle-dead'
 listHealing = {'dee','peter','steven','gf','blackjack'}
 listAttacking = {'dee','peter','steven','gf','boyfriend'}
 bjDefY = 0
+introDone = false
 function onCreate() 
 	precacheImage('spite/hit')
 	precacheImage('heal')
@@ -26,20 +27,6 @@ function onCreate()
 	
 	makeLuaSprite('void','flesh', 605, 3881)
 	addLuaSprite('void', false)
-	
-	--[[makeAnimatedLuaSprite('steven', 'bounces', 4395.4, 4977.65);
-	addAnimationByPrefix('steven', 'dance', 'steven dance', 30, false);
-	addAnimationByPrefix('steven', 'die', 'steven dead', 30, true);
-	objectPlayAnimation('steven', 'dance', true);
-	
-	addLuaSprite('steven', true)
-	
-	makeAnimatedLuaSprite('peter', 'bounces', 4721.25, 5133.3);
-	addAnimationByPrefix('peter', 'dance', 'peter idle', 30, false);
-	addAnimationByPrefix('peter', 'die', 'peter dead', 30, true);
-	objectPlayAnimation('peter', 'dance', true);
-	
-	addLuaSprite('peter', true)--]]
 	
 	makeAnimatedLuaSprite('blackjack', 'bounces', 4842.55, 4842.55);
 	bjDefY = getProperty('blackjack.y')
@@ -296,6 +283,7 @@ function onEvent(n,v1,v2)
 		removeLuaSprite('millerint')
 		removeLuaSprite('flashbacks')
 		removeLuaSprite('black')
+		introDone = true
 		setProperty('camHUD.visible', true)
 	end
 	
@@ -336,6 +324,18 @@ function goodNoteHit(id, noteData, noteType, isSustainNote)
 			end
 		end
 		playSound('dmg-spite', 0.15)
+		--[[local charPick = math.random(1,5)
+		local charName = listAttacking[charPick] 
+		local animName = getProperty(charName..'.animation.name')
+		repeat
+			charPick = math.random(1,5) 
+			charName = listAttacking[charPick] 
+			animName = getProperty(charName..'.animation.name')
+		until animName == 'idle' or string.sub(getProperty(animName),1,5) == 'dance'
+		
+		if animName == 'idle' or string.sub(getProperty(animName),1,5) == 'dance' then
+			playHitAnim(charName)
+		end--]]
 	end
 end
 
@@ -391,12 +391,9 @@ function onUpdate(elapsed)
 	for i = 0, getProperty('unspawnNotes.length')-1 do
 		if spitehp[getPropertyFromGroup('unspawnNotes', i, 'noteData') + 1] < 1 and 
 			getPropertyFromGroup('unspawnNotes', i, 'noteType') == 'Spite Note' then
-				--debugPrint('removed spite unspawnNote'..tostring(getPropertyFromGroup('unspawnNotes', i, 'noteData') + 1))
 				removeFromGroup('unspawnNotes', i)
 		end
 	end
-	
-	
 
 	if mustHitSection == false then
 		setProperty('defaultCamZoom', 0.45)
@@ -404,12 +401,14 @@ function onUpdate(elapsed)
 		setProperty('defaultCamZoom', 0.3)
 	end
 	
-	if getProperty('flashbacks.alpha') > 0 then
-		setProperty('flashbacks.alpha', getProperty('flashbacks.alpha') - 0.6 * elapsed)
-		setProperty('flashbacks.scale.x', getProperty('flashbacks.scale.x') + 0.1 * elapsed)
-		setProperty('flashbacks.scale.y', getProperty('flashbacks.scale.y') + 0.1 * elapsed)
-	else
-		setProperty('flashbacks.scale.x', 1.4)
-		setProperty('flashbacks.scale.y', 1.4)
+	if introDone == false then
+		if getProperty('flashbacks.alpha') > 0 then
+			setProperty('flashbacks.alpha', getProperty('flashbacks.alpha') - 0.6 * elapsed)
+			setProperty('flashbacks.scale.x', getProperty('flashbacks.scale.x') + 0.1 * elapsed)
+			setProperty('flashbacks.scale.y', getProperty('flashbacks.scale.y') + 0.1 * elapsed)
+		else
+			setProperty('flashbacks.scale.x', 1.4)
+			setProperty('flashbacks.scale.y', 1.4)
+		end
 	end
 end 

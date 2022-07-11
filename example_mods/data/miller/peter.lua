@@ -56,10 +56,9 @@ end
 function noteMiss(id, direction, noteType, isSustainNote)
 	if noteType == 'Peter Sing' then
 		if not isSustainNote then
-			animToPlay = singAnimations[direction+1];
+			animToPlay = singAnimations[direction+1]..'miss';
 		end	
 		characterToPlay = 'peter'
-		animToPlay = animToPlay..'miss'
 				
 		playAnimation(characterToPlay, animToPlay, true);
 	end

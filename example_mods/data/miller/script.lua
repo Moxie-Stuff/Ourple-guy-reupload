@@ -73,10 +73,9 @@ end
 function noteMiss(id, direction, noteType, isSustainNote)
 	if noteType == 'Special Sing' then
 		if not isSustainNote then
-			animToPlay = singAnimations[direction+1];
+			animToPlay = singAnimations[direction+1]..'miss';
 		end	
 		characterToPlay = 'dee'
-		animToPlay = animToPlay..'miss'
 				
 		playAnimation(characterToPlay, animToPlay, true);
 	end
