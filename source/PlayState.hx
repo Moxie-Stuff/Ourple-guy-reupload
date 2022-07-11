@@ -355,6 +355,7 @@ class PlayState extends MusicBeatState
 				FreeplaySaves.criminalLock = 'unlocked';
 			case 'miller':
 				songComposer = '\nby kiwiquest.\nheaddzo.\nMETR0GARD3N.\nPolyfield.\nGalxe.';
+				FlxG.save.data.millerLock = 'unlocked';
 		}
 
 		FreeplaySaves.saveShit();

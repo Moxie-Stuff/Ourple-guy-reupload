@@ -129,9 +129,9 @@ class FreeplayState extends MusicBeatState
 		addSong('fazfuck news', 0, 'guy', 0xFF000000, FlxG.save.data.fazfuckLock);
 		addSong('criminal', 0, 'guy', 0xFF000000, FlxG.save.data.criminalLock);
 		#if !debug 
-			if (everyFreeplaySongBeaten() || FlxG.save.data.millerHere) addSong('miller', 0, 'guy', 0xFF000000, 'locked');
+			if (everyFreeplaySongBeaten() || FlxG.save.data.millerHere) addSong('miller', 0, 'guy', 0xFF000000, FlxG.save.data.millerLock);
 		#else
-		addSong('miller', 0, 'guy', 0xFF000000, 'locked');
+		addSong('miller', 0, 'guy', 0xFF000000, FlxG.save.data.millerLock);
 		#end
 
 		WeekData.loadTheFirstEnabledMod();

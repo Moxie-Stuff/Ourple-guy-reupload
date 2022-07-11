@@ -49,6 +49,7 @@ class FreeplaySaves
     public static var followedLock:String = 'locked';
     public static var fazfuckLock:String = 'locked';
     public static var criminalLock:String = 'locked';
+    public static var millerLock:String = 'locked';
 
     public static function fuckinSet() {
         if (FlxG.save.data.lurkingLock == null) FlxG.save.data.lurkingLock = 'locked';
@@ -67,6 +68,7 @@ class FreeplaySaves
         if (FlxG.save.data.followedLock == null) FlxG.save.data.followedLock = 'locked';
         if (FlxG.save.data.fazfuckLock == null) FlxG.save.data.fazfuckLock = 'locked';
         if (FlxG.save.data.criminalLock == null) FlxG.save.data.criminalLock = 'locked';
+        if (FlxG.save.data.millerLock == null) FlxG.save.data.millerLock = 'locked';
         FlxG.save.flush();
     }
 
@@ -87,6 +89,7 @@ class FreeplaySaves
         FlxG.save.data.followedLock = followedLock;
         FlxG.save.data.fazfuckLock = fazfuckLock;
         FlxG.save.data.criminalLock = criminalLock;
+        FlxG.save.data.millerLock = millerLock;
         FlxG.save.flush();
     }
 
@@ -107,6 +110,7 @@ class FreeplaySaves
         followedLock = FlxG.save.data.followedLock;
         fazfuckLock = FlxG.save.data.fazfuckLock;
         criminalLock = FlxG.save.data.criminalLock;
+        millerLock = FlxG.save.data.millerLock;
         if (lurkingLock == 'beaten' && loreLock == 'beaten' && blubberLock == 'beaten' && goldenLock == 'beaten' && performanceLock == 'beaten' && trappedLock == 'beaten' && biteLock == 'beaten' && gofishLock == 'beaten' && watchfulLock == 'beaten' && restlessLock == 'beaten' && beatboxLock == 'beaten' && showtimeLock == 'beaten' && manLock == 'beaten' && followedLock == 'beaten' && fazfuckLock == 'beaten' && criminalLock == 'beaten') FlxG.save.data.millerHere = true;
         FlxG.save.flush();
     }
