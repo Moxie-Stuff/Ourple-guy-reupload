@@ -57,25 +57,72 @@
 		},
 		{
 			"offsets": [
-				-144,
-				-300
-			],
-			"indices": [],
-			"fps": 30,
-			"anim": "idle-alt",
-			"loop": false,
-			"name": "NGTIdle-alt"
-		},
-		{
-			"offsets": [
 				-140,
 				-300
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 30,
 			"anim": "idle",
-			"loop": false,
+			"indices": [],
 			"name": "NGTIdle0"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-142,
+				-299
+			],
+			"anim": "singLEFT-alt",
+			"fps": 30,
+			"name": "madLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-142,
+				-299
+			],
+			"anim": "singUP-alt",
+			"fps": 30,
+			"name": "madUp",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-142,
+				-299
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 30,
+			"name": "madRight",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-142,
+				-299
+			],
+			"anim": "singDOWN-alt",
+			"fps": 30,
+			"name": "madDown",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-144,
+				-300
+			],
+			"indices": [
+				33,
+				33
+			],
+			"fps": 30,
+			"anim": "idle-alt",
+			"loop": false,
+			"name": "NGTPissed"
 		}
 	],
 	"no_antialiasing": true,

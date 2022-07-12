@@ -1,54 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="ngt.png">
-	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- Created with Adobe Animate version 22.0.6.202 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="NGTDown0000" x="14" y="14" width="251" height="300"/>
-	<SubTexture name="NGTDown0001" x="14" y="14" width="251" height="300"/>
-	<SubTexture name="NGTDown0002" x="298" y="14" width="251" height="300"/>
-	<SubTexture name="NGTDown0003" x="298" y="14" width="251" height="300"/>
-	<SubTexture name="NGTIdle0000" x="582" y="14" width="164" height="267"/>
-	<SubTexture name="NGTIdle0001" x="582" y="14" width="164" height="267"/>
-	<SubTexture name="NGTIdle0002" x="779" y="14" width="164" height="267"/>
-	<SubTexture name="NGTIdle0003" x="779" y="14" width="164" height="267"/>
-	<SubTexture name="NGTIdle0004" x="976" y="14" width="164" height="267"/>
-	<SubTexture name="NGTIdle0005" x="976" y="14" width="164" height="267"/>
-	<SubTexture name="NGTIdle0006" x="1173" y="14" width="164" height="267"/>
-	<SubTexture name="NGTIdle0007" x="1173" y="14" width="164" height="267"/>
-	<SubTexture name="NGTIdle-alt0000" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTIdle-alt0001" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTIdle-alt0002" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTIdle-alt0003" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTIdle-alt0004" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTIdle-alt0005" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTIdle-alt0006" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTIdle-alt0007" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTLeft0000" x="1370" y="14" width="251" height="300"/>
-	<SubTexture name="NGTLeft0001" x="1370" y="14" width="251" height="300"/>
-	<SubTexture name="NGTLeft0002" x="1654" y="14" width="251" height="300"/>
-	<SubTexture name="NGTLeft0003" x="1654" y="14" width="251" height="300"/>
-	<SubTexture name="NGTPissed0000" x="14" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0001" x="14" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0002" x="210" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0003" x="210" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0004" x="406" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0005" x="406" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0006" x="602" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0007" x="602" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0008" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0009" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0010" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0011" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0012" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0013" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0014" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0015" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTPissed0016" x="798" y="347" width="163" height="267"/>
-	<SubTexture name="NGTRight0000" x="994" y="347" width="251" height="300"/>
-	<SubTexture name="NGTRight0001" x="994" y="347" width="251" height="300"/>
-	<SubTexture name="NGTRight0002" x="1278" y="347" width="251" height="300"/>
-	<SubTexture name="NGTRight0003" x="1278" y="347" width="251" height="300"/>
-	<SubTexture name="NGTUp0000" x="1562" y="347" width="251" height="300"/>
-	<SubTexture name="NGTUp0001" x="1562" y="347" width="251" height="300"/>
-	<SubTexture name="NGTUp0002" x="14" y="680" width="251" height="300"/>
-	<SubTexture name="NGTUp0003" x="14" y="680" width="251" height="300"/>
+	<SubTexture name="NGTDown0000" x="5" y="5" width="251" height="300"/>
+	<SubTexture name="NGTDown0001" x="5" y="5" width="251" height="300"/>
+	<SubTexture name="NGTDown0002" x="261" y="5" width="251" height="300"/>
+	<SubTexture name="NGTDown0003" x="261" y="5" width="251" height="300"/>
+	<SubTexture name="NGTIdle0000" x="517" y="5" width="163" height="267" frameX="-1" frameY="0" frameWidth="164" frameHeight="267"/>
+	<SubTexture name="NGTIdle0001" x="517" y="5" width="163" height="267" frameX="-1" frameY="0" frameWidth="164" frameHeight="267"/>
+	<SubTexture name="NGTIdle0002" x="685" y="5" width="163" height="267" frameX="0" frameY="0" frameWidth="164" frameHeight="267"/>
+	<SubTexture name="NGTIdle0003" x="685" y="5" width="163" height="267" frameX="0" frameY="0" frameWidth="164" frameHeight="267"/>
+	<SubTexture name="NGTIdle0004" x="853" y="5" width="163" height="267" frameX="0" frameY="0" frameWidth="164" frameHeight="267"/>
+	<SubTexture name="NGTIdle0005" x="853" y="5" width="163" height="267" frameX="0" frameY="0" frameWidth="164" frameHeight="267"/>
+	<SubTexture name="NGTIdle0006" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTIdle0007" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTLeft0000" x="1021" y="5" width="251" height="300"/>
+	<SubTexture name="NGTLeft0001" x="1021" y="5" width="251" height="300"/>
+	<SubTexture name="NGTLeft0002" x="1277" y="5" width="251" height="300"/>
+	<SubTexture name="NGTLeft0003" x="1277" y="5" width="251" height="300"/>
+	<SubTexture name="NGTPissed0000" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0001" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0002" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0003" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0004" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0005" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0006" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0007" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0008" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0009" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0010" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0011" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0012" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0013" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0014" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0015" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0016" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0017" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0018" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0019" x="1533" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0020" x="1701" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0021" x="1701" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0022" x="1701" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0023" x="1869" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0024" x="1869" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0025" x="1869" y="5" width="163" height="267"/>
+	<SubTexture name="NGTPissed0026" x="5" y="310" width="163" height="267"/>
+	<SubTexture name="NGTPissed0027" x="5" y="310" width="163" height="267"/>
+	<SubTexture name="NGTPissed0028" x="5" y="310" width="163" height="267"/>
+	<SubTexture name="NGTPissed0029" x="173" y="310" width="163" height="267"/>
+	<SubTexture name="NGTPissed0030" x="173" y="310" width="163" height="267"/>
+	<SubTexture name="NGTPissed0031" x="173" y="310" width="163" height="267"/>
+	<SubTexture name="NGTPissed0032" x="173" y="310" width="163" height="267"/>
+	<SubTexture name="NGTPissed0033" x="173" y="310" width="163" height="267"/>
+	<SubTexture name="NGTRight0000" x="341" y="310" width="251" height="300"/>
+	<SubTexture name="NGTRight0001" x="341" y="310" width="251" height="300"/>
+	<SubTexture name="NGTRight0002" x="597" y="310" width="251" height="300"/>
+	<SubTexture name="NGTRight0003" x="597" y="310" width="251" height="300"/>
+	<SubTexture name="NGTUp0000" x="853" y="310" width="251" height="300"/>
+	<SubTexture name="NGTUp0001" x="853" y="310" width="251" height="300"/>
+	<SubTexture name="NGTUp0002" x="1109" y="310" width="251" height="300"/>
+	<SubTexture name="NGTUp0003" x="1109" y="310" width="251" height="300"/>
+	<SubTexture name="madDown0000" x="1365" y="310" width="163" height="267"/>
+	<SubTexture name="madDown0001" x="1365" y="310" width="163" height="267"/>
+	<SubTexture name="madDown0002" x="1365" y="310" width="163" height="267"/>
+	<SubTexture name="madDown0003" x="1533" y="310" width="163" height="267"/>
+	<SubTexture name="madLeft0000" x="1701" y="310" width="163" height="267"/>
+	<SubTexture name="madLeft0001" x="1701" y="310" width="163" height="267"/>
+	<SubTexture name="madLeft0002" x="1701" y="310" width="163" height="267"/>
+	<SubTexture name="madLeft0003" x="1869" y="310" width="163" height="267"/>
+	<SubTexture name="madRight0000" x="5" y="615" width="163" height="267"/>
+	<SubTexture name="madRight0001" x="5" y="615" width="163" height="267"/>
+	<SubTexture name="madRight0002" x="5" y="615" width="163" height="267"/>
+	<SubTexture name="madRight0003" x="173" y="615" width="163" height="267"/>
+	<SubTexture name="madUp0000" x="341" y="615" width="163" height="267"/>
+	<SubTexture name="madUp0001" x="341" y="615" width="163" height="267"/>
+	<SubTexture name="madUp0002" x="341" y="615" width="163" height="267"/>
+	<SubTexture name="madUp0003" x="509" y="615" width="163" height="267"/>
 </TextureAtlas>
