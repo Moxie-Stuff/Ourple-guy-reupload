@@ -22,7 +22,7 @@ function onCreate()
 	scaleObject('eyes', 3.2, 3)
 	updateHitbox('eyes')
 	setProperty('eyes.antialiasing', false)
-	if getPropertyFromClass('clientPrefs', 'flashing') then
+	if flashingLights == true then
 		addLuaSprite('eyes', false)
 	end
 	
@@ -30,7 +30,9 @@ function onCreate()
 	scaleObject('scanline', 1.5, 1.5)
 	setScrollFactor('scanline', 0, 0)
 	setObjectCamera('scanline', 'other')
-	addLuaSprite('scanline', true)
+	if lowQuality == false then
+		addLuaSprite('scanline', true)
+	end
 	
 end
 
@@ -42,7 +44,7 @@ function onCreatePost()
 end 
 
 function onEvent(n, v1, v2)
-	if getPropertyFromClass('clientPrefs', 'flashing') then
+	if flashingLights == true then
 		if n == 'Alter Visibility' and v1 == 'eyes' and v2 == 'true' then
 			triggerEvent('Flash Camera', '0.5', '0')
 			triggerEvent('Add Camera Zoom', '0.13', '0.16')

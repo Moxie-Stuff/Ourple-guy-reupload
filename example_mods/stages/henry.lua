@@ -13,7 +13,9 @@ function onCreate()
 	scaleObject('scanline', 1.5, 1.5)
 	setScrollFactor('scanline', 0, 0)
 	setObjectCamera('scanline', 'other')
-	addLuaSprite('scanline', true)
+	if lowQuality == false then
+		addLuaSprite('scanline', true)
+	end
 	setProperty('scanline.visible', false)
 
 end
